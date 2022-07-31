@@ -1,0 +1,47 @@
+@import '../app.component.scss';
+
+footer {
+  height: 20vh;
+  @include flex();
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: $offWhite;
+  .contact {
+    width: fit-content;
+    top: 80%;
+    p {
+      font-size: 1.3rem;
+      letter-spacing: 0.2rem;
+      font-weight:bold;
+      font-family: 'Anton', sans-serif;
+      color: $Dyellow;
+      border-top: 1px solid $Dyellow;
+      border-bottom: 1px solid $Dyellow;
+      opacity: 0;
+      transition: all .8s ease-in-out;
+    }
+    p:hover {
+      border-top: 1px solid $yellow;
+      border-bottom: 1px solid $yellow;
+      color: $yellow;
+    }
+    p.active{
+      opacity: 1;
+    }
+  }
+  .logo-wrap{
+    height: 3.5vh;
+    margin-top: 1.5rem;
+    img{
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  
+}
+
+small {
+  margin: 1rem 0;
+  font-size: .6rem;
+}

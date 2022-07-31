@@ -1,0 +1,314 @@
+@import "../app.component.scss";
+
+.projectsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2.5rem;
+  background: $offWhite;
+}
+
+// Header
+app-header,
+app-footer {
+  flex-grow: 0;
+}
+
+// Categories
+.categories {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.categories-inner {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  z-index: 2;
+}
+
+.categories-items {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  p {
+    color: $white;
+  }
+  li {
+    cursor: pointer;
+    font-size: 2rem;
+    letter-spacing: 1.8px;
+    font-family: "Anton", sans-serif;
+    transition: all 0.5s ease-in-out;
+  }
+  li:hover,
+  li:active {
+    color: $white;
+  }
+}
+
+//  For active category
+li.active {
+  color: $white;
+}
+
+// For Mobile category
+.categories-inner.active {
+  display: block;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.494);
+}
+
+.categories-btn {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  font-family: "Anton", sans-serif;
+  border-radius: 3px;
+  border: none;
+  color: $white;
+  background-color: rgba(0, 0, 0, 0.774);
+  z-index: 3;
+}
+
+// Categories For Desktop
+@media screen and (min-width: 1024px) {
+  .categories {
+    height: initial;
+    width: 100%;
+    position: initial;
+  }
+
+  .categories-inner {
+    height: initial;
+    width: 100%;
+    position: initial;
+    display: flex;
+    justify-content: center;
+    opacity: 1;
+  }
+
+  .categories-items {
+    p {
+      color: $black;
+    }
+    position: initial;
+    transform: initial;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .categories-btn {
+    display: none;
+  }
+}
+
+// Main
+main {
+  min-height: 70vh;
+  flex-grow: 1;
+  margin-top: 10vh;
+}
+
+.wrap {
+  @include flex();
+}
+
+.project-item {
+  min-height: 40vh;
+  cursor: pointer;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 5rem 2rem;
+  transform: scale(0.9);
+  // Category Display
+  opacity: 0;
+  display: none;
+  transition: all 1s ease-in-out;
+}
+
+// Category Active Display
+.project-item.active {
+  display: flex;
+}
+
+// Scroll animation
+.project-item.scrollanime {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.desc-box {
+  height: 50%;
+  width: 100%;
+  padding: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  .date {
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    p {
+      font-size: 0.8rem;
+      color: $black;
+    }
+  }
+
+  .title {
+    padding-top: 1rem;
+    font-size: 0.8rem;
+    color: $black;
+  }
+
+  h2 {
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+    letter-spacing: 1.6px;
+    font-family: "Anton", sans-serif;
+    color: $black;
+  }
+
+  .details-box {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .details {
+    padding-bottom: 1rem;
+    align-items: flex-start;
+  }
+
+  .role {
+    margin-right: 1.5rem;
+  }
+
+  .role,
+  .skills {
+    p {
+      font-size: 0.8rem;
+      font-weight: bold;
+      color: $black;
+    }
+    li {
+      font-size: 0.8rem;
+    }
+  }
+
+  .hoverText {
+    font-size: 1rem;
+    font-family: "Anton", sans-serif;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.project-thumbnail {
+  height: 50%;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+// Hover Animation
+.project-item {
+  svg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  rect {
+    fill: none;
+    stroke: $black;
+    stroke-width: 1;
+    stroke-dasharray: 250, 0;
+    transition: all 0.35s linear;
+  }
+}
+
+.project-item:hover {
+  rect {
+    stroke-width: 2;
+    stroke-dasharray: 250, 500;
+    transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .hoverText {
+    opacity: 1;
+    color: $Dyellow;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .projectsContainer {
+    padding: 3.5rem 2rem 1.5rem 2rem;
+  }
+  main {
+    .project-item {
+      margin: 4rem 10rem;
+    }
+
+    .desc-box {
+      .details-box {
+        width: 100%;
+        flex-direction: row;
+        align-items: flex-end;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .projectsContainer {
+    padding: 3.5rem 4.5rem 1rem 4.5rem;
+  }
+
+  main {
+    .project-item {
+      min-height: initial;
+      height: 40vh;
+      margin: 5rem 10rem;
+      flex-direction: row;
+      justify-content: center;
+    }
+    .desc-box {
+      height: 100%;
+      width: 50%;
+      justify-content: space-between;
+      .date {
+        align-items: flex-end;
+      }
+
+      .details-box {
+        width: 100%;
+        flex-direction: row;
+        align-items: flex-end;
+      }
+    }
+
+    .project-thumbnail {
+      height: 100%;
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .projectsContainer {
+    padding: 3.5rem 17rem 1rem 17rem;
+  }
+}

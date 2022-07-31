@@ -1,0 +1,94 @@
+<div class="flexContainer">
+  <app-header [aboutActive]="true"></app-header>
+  <main>
+    <section class="wrap">
+      <h3>
+        I am a <br />
+        Front-end Developer <br />
+        who loves:
+      </h3>
+      <div class="about-box wrap">
+        <div class="about-item wrap">
+          <div class="about-items">
+            <ul>
+              <li class="about-tittle">
+                to figure things out and solve problems
+              </li>
+              <li class="about-desc">
+                When faced with a problem, I feel that there is a lot to
+                discover and enjoy!
+              </li>
+              <li class="about-tittle">
+                to make people have wonderful experiences
+              </li>
+              <li class="about-desc">
+                Making people happy and wonderful experiences makes me wonderful
+                as well!
+              </li>
+              <li class="about-tittle">
+                to challenge new things with curiosity
+              </li>
+              <li class="about-desc">
+                I would like to grow fast and always keep absorbing many things!
+              </li>
+            </ul>
+          </div>
+          <div class="resumeLink"
+          inViewport
+          [inViewportOptions]="{ threshold: [1] }"
+          (inViewportAction)="scrollAnimation($event)">
+            <a href="../../assets/resume/YukaYamamoto.pdf" target="_blank">
+              <p>VIEW RESUME</p>
+            </a>
+          </div>
+        </div>
+        <div class="video-wrap wrap">
+          <video  autoplay loop>
+            <source src="../../assets/video/videoportfolio.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <h3>Skills</h3>
+      <div class="skill-frontEnd wrap">
+        <p class="skill-title">Front-end</p>
+
+        <!-- Front-end Skills For Loop -->
+        <div class="skill" *ngFor="let skill of skills">
+          <div class="skill-info">
+            <div class="icon-wrap">
+              <img [src]="skill.attributes.SkillIcon.data.attributes.url" [alt]="skill.attributes.SkillIcon.data.attributes.alternativeText" />
+            </div>
+            <p class="skill-name">{{ skill.attributes.SkillName }}</p>
+          </div>
+
+          <div class="skill-bar-container">
+            <div
+              class="skill-bar"
+              inViewport
+              [inViewportOptions]="{ threshold: [0] }"
+              (inViewportAction)="onIntersection($event, skill.attributes.SkillLevel)"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-backEnd wrap">
+        <p class="skill-title">Back-end</p>
+        <p class="skill-name">Node.js | MySQL | Strapi (Headless CMS) | PHP</p>
+      </div>
+      <div class="skill-design wrap">
+        <p class="skill-title">Design</p>
+        <p class="skill-name">Figma | Photoshop | Illustrator | After Effect</p>
+      </div>
+      <div class="skill-else wrap">
+        <p class="skill-title">What else I can do</p>
+        <p class="skill-name">Wordpress | Github | Sass | Bootstrap</p>
+      </div>
+    </section>
+  </main>
+  <app-footer></app-footer>
+</div>

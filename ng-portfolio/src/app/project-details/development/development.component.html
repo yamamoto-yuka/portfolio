@@ -1,0 +1,78 @@
+<div class="details-container">
+  <app-header></app-header>
+  <main>
+    <div id="top" class="detail-box wrap">
+      <div class="date">
+        <ul class="wrap">
+          <li>
+            {{ project.attributes.StartDate }}
+          </li>
+          <li><span>-</span></li>
+          <li>
+            {{ project.attributes.EndDate }}
+          </li>
+        </ul>
+      </div>
+
+      <p class="title">{{ project.attributes.Title }}</p>
+      <h1 class="clientName"> {{project.attributes.ClientName}}</h1>
+      <p class="clientDescription">
+        {{ project.attributes.Description }}
+      </p>
+
+      <ul class="link wrap">
+        <li>
+          <a class="siteLink" [href]="project.attributes.SiteURL" target="_blank">VISIT SITE</a>
+        </li>
+        <li>
+          <a class="githubLink" [href]="project.attributes.GithubURL" target="_blank">GITHUB</a>
+        </li>
+      </ul>
+
+      <div class="roles-box wrap">
+        <div class="description">
+          <p>ROLES</p>
+          <ul>
+            <li *ngFor="let role of project.attributes.roles_portfolios.data">
+              {{ role.attributes.Role }}
+            </li>
+          </ul>
+        </div>
+
+        <div class="description">
+          <p>SKILL</p>
+          <ul>
+            <li *ngFor="let skill of project.attributes.skills.data">
+              {{ skill.attributes.SkillName }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <section class="wrap" *ngFor="let img of project.attributes.project_images.data">
+      <div
+        class="img-wrap"
+        inViewport
+        [inViewportOptions]="{ threshold: [0] }"
+        (inViewportAction)="onIntersection($event)"
+      >
+        <img
+          [src]="img.attributes.Image.data[0].attributes.url"
+          [alt]="img.attributes.Image.data[0].attributes.alternativeText"
+        />
+      </div>
+    </section>
+
+    <div class="scrollup-box wrap">
+      <a (click)="backToTop($event)"><svg  viewBox="0 0 448 512"><path d="M416 352c-8.188 0-16.38-3.125-22.62-9.375L224 173.3l-169.4 169.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25C432.4 348.9 424.2 352 416 352z"/></svg></a>
+    </div>
+    <div class="btn-box wrap">
+      <button routerLink="/projects" class="more-btn" role="button">
+        <span class="text">See More Projects</span
+        ><span>Thanks for your interest!</span>
+      </button>
+    </div>
+  </main>
+  <app-footer></app-footer>
+</div>
