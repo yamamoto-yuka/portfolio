@@ -61,7 +61,7 @@ main {
   }
 
   a {
-    font-size: 3rem;
+    font-size: 2.5rem;
     letter-spacing: 0.8rem;
     font-family: "Anton", sans-serif;
   }
@@ -150,6 +150,31 @@ main {
     border-top: 1px solid $Dyellow;
     border-bottom: 1px solid $Dyellow;
     color: $Dyellow;
+  }
+}
+
+@media screen and (max-width: 320px ) {
+  .top-nav {
+    top: 60%;
+    transform: translate(-50%, -60%);
+    li:first-child {
+      padding-bottom: 3rem;
+    }
+    a {
+      font-size: 1.5rem;
+    }
+  }
+
+  .logo {
+    width: 60px;
+    top: 90%;
+  }
+
+  .contact {
+    top: 80%;
+    p {
+      font-size: 1rem;
+    }
   }
 }
 
