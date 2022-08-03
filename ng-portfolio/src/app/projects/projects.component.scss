@@ -151,16 +151,19 @@ main {
 .desc-box {
   height: 50%;
   width: 100%;
-  padding: 1rem;
   flex-direction: column;
   align-items: flex-start;
-  .date {
+  .desc-item {
     width: 100%;
-    justify-content: space-between;
-    align-items: flex-start;
-    p {
-      font-size: 0.8rem;
-      color: $black;
+    padding: 1rem;
+    .date {
+      width: 100%;
+      justify-content: space-between;
+      align-items: flex-start;
+      p {
+        font-size: 0.8rem;
+        color: $black;
+      }
     }
   }
 
@@ -259,8 +262,7 @@ main {
   }
   main {
     .project-item {
-      min-height: initial;
-      height: 35vh;
+      min-height: 10vh;
       margin: 5rem 1rem;
       flex-direction: row;
       justify-content: center;
@@ -269,25 +271,20 @@ main {
       height: 100%;
       width: 50%;
       justify-content: space-between;
-      .date {
-        align-items: flex-end;
-      }
-
-      .details-box {
-        width: 100%;
-        flex-direction: row;
-        align-items: center;
-      }
-    }
-    .project-thumbnail {
-      height: 100%;
-      img {
+      .desc-item {
         height: 100%;
-        width: 100%;
-        object-fit:cover;
+
+        .date {
+          align-items: flex-end;
+        }
+
+        .details-box {
+          width: 100%;
+          flex-direction: row;
+          align-items: center;
+        }
       }
     }
-    
   }
 }
 
@@ -297,11 +294,17 @@ main {
   }
   main {
     .project-item {
-      margin: 5rem 0;
+      margin: 5rem 4rem;
     }
     .project-thumbnail {
       height: 100%;
       width: 50%;
+    }
+
+    .desc-box {
+      h2 {
+        padding-bottom: 2rem;
+      }
     }
   }
 }
@@ -314,6 +317,11 @@ main {
   main {
     .project-item {
       margin: 5rem 6rem;
+    }
+    .desc-box {
+      h2 {
+        padding-bottom: 4.3rem;
+      }
     }
   }
 }
