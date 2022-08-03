@@ -1,20 +1,20 @@
 // Font
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap");
 
 // Mixin
-@mixin centerCenter($j:center, $a:center) {
+@mixin centerCenter($j: center, $a: center) {
   display: flex;
-  justify-content:$j;
+  justify-content: $j;
   align-items: $a;
 }
 
-@mixin  FlexColumn {
+@mixin FlexColumn {
   display: flex;
   flex-direction: column;
 }
 
 // CTAs
-@mixin cta($color:white) {
+@mixin cta($color: white) {
   color: $color;
 }
 
@@ -34,13 +34,13 @@
   width: 0%;
 }
 
-@mixin catHoverAfterBefore($border-color: white,  $width:70% ) {
+@mixin catHoverAfterBefore($border-color: white, $width: 70%) {
   border-color: $border-color;
   transition: width 300ms ease-in-out;
   width: $width;
 }
 
-@mixin catHoverBefore($width:70%) {
+@mixin catHoverBefore($width: 70%) {
   bottom: auto;
   top: 0;
   width: $width;
@@ -50,11 +50,15 @@ $black: #0d0d0d;
 $bg: #d9d9d9;
 
 // Base
-*{
+* {
   // margin: 0;
   // padding: 0;
   box-sizing: border-box;
   font-family: Helvetica, sans-serif;
+}
+
+body {
+  background-color: $bg;
 }
 
 a {
@@ -66,7 +70,6 @@ li {
   list-style: none;
 }
 
-
 // More Btn
 .more-btn {
   position: relative;
@@ -74,15 +77,15 @@ li {
   border: 1px solid $black;
   color: #18181a;
   display: inline-block;
-  font-size: .8rem;
-  padding: .5rem 3rem;
+  font-size: 0.8rem;
+  padding: 0.5rem 3rem;
   cursor: pointer;
   background: transparent;
 }
 
 .more-btn span:first-child {
   position: relative;
-  transition: color .6s ease-in-out;
+  transition: color 0.6s ease-in-out;
   z-index: 10;
 }
 
@@ -91,7 +94,7 @@ li {
   display: block;
   position: absolute;
   bottom: 0;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   z-index: 100;
   opacity: 0;
   top: 50%;
