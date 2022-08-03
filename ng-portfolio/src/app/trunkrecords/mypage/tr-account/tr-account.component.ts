@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { TrCommonService } from '../../services/tr-common.service';
 
 @Component({
-  selector: 'app-tr-manage-products',
-  templateUrl: './tr-manage-products.component.html',
-  styleUrls: ['./tr-manage-products.component.scss'],
+  selector: 'app-tr-account-products',
+  templateUrl: './tr-account.component.html',
+  styleUrls: ['./tr-account.component.scss'],
 })
-export class TrManageProductsComponent implements OnInit {
+export class TrAccountComponent implements OnInit {
   username: any = '';
   email: any = '';
   updateStatus = false;

@@ -12,8 +12,7 @@ import { TrApparelComponent } from './trunkrecords/tr-apparel/tr-apparel.compone
 import { TrAppareldetailsComponent } from './trunkrecords/tr-appareldetails/tr-appareldetails.component';
 import { TrSignupComponent } from './trunkrecords/mypage/tr-signup/tr-signup.component';
 import { TrLoginComponent } from './trunkrecords/mypage/tr-login/tr-login.component';
-import { TrManageProductsComponent } from './trunkrecords/mypage/tr-manage-products/tr-manage-products.component';
-import { TrUpdateComponent } from './trunkrecords/mypage/tr-update/tr-update.component';
+import { TrAccountComponent} from './trunkrecords/mypage/tr-account/tr-account.component';
 import { LoginGuard } from './trunkrecords/auth/login.guard';
 import { CasestudyComponent } from './project-details/casestudy/casestudy.component';
 import { TrPasswordComponent } from './trunkrecords/mypage/password/tr-password.component';
@@ -36,8 +35,7 @@ const routes: Routes = [
   {path:'trunkrecords/apparel/:id', component:TrAppareldetailsComponent},
   {path:'trunkrecords/account/register', component:TrSignupComponent},
   {path:'trunkrecords/login', component:TrLoginComponent},
-  {path:'trunkrecords/account', component:TrManageProductsComponent, canActivate:[LoginGuard]},
-  {path:'trunkrecords/admin/update/:id', component:TrUpdateComponent, canActivate:[LoginGuard]},
+  {path:'trunkrecords/account', component:TrAccountComponent, canActivate:[LoginGuard]},
   {path:'trunkrecords/account/password', component:TrPasswordComponent,canActivate:[LoginGuard] }
 ];
 

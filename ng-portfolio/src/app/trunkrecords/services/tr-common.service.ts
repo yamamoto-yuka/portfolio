@@ -48,31 +48,6 @@ export class TrCommonService {
     );
   }
 
-  updateDisplay(id: any, displaydata: any) {
-    return this.http.put<{ data: Product }>(
-      this.server + '/api/apparelpages/' + id,
-      displaydata,
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: 'Bearer ' + localStorage.getItem('jwt'),
-        },
-      }
-    );
-  }
-
-  deleteProduct(id: number) {
-    return this.http.delete<{ data: Product }>(
-      this.server + '/api/apparelpages/' + id,
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: 'Bearer ' + localStorage.getItem('jwt'),
-        },
-      }
-    );
-  }
-
   // For guard.ts
   isLoggedIn() {
     if (localStorage.getItem('jwt')) {

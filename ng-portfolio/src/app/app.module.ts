@@ -24,8 +24,7 @@ import { TrHeaderComponent } from './trunkrecords/tr-header/tr-header.component'
 import { TrFooterComponent } from './trunkrecords/tr-footer/tr-footer.component';
 import { TrLoginComponent } from './trunkrecords/mypage/tr-login/tr-login.component';
 import { TrSignupComponent } from './trunkrecords/mypage/tr-signup/tr-signup.component';
-import { TrManageProductsComponent } from './trunkrecords/mypage/tr-manage-products/tr-manage-products.component';
-import { TrUpdateComponent } from './trunkrecords/mypage/tr-update/tr-update.component';
+import { TrAccountComponent } from './trunkrecords/mypage/tr-account/tr-account.component';
 import { CommonStyleComponent } from './trunkrecords/common-style/common-style.component';
 import { CasestudyComponent } from './project-details/casestudy/casestudy.component';
 import { TrPasswordComponent } from './trunkrecords/mypage/password/tr-password.component';
@@ -55,8 +54,7 @@ import { TrPasswordComponent } from './trunkrecords/mypage/password/tr-password.
     TrFooterComponent,
     TrLoginComponent,
     TrSignupComponent,
-    TrManageProductsComponent,
-    TrUpdateComponent,
+    TrAccountComponent,
     CommonStyleComponent,
     CasestudyComponent,
     TrPasswordComponent,
