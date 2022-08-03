@@ -36,10 +36,10 @@ export class TrUpdateComponent implements OnInit {
         product_quantity: this.product_quantity
       }
     };
-    this.cs.updateProduct(id, updateData).subscribe(res =>{
-      this.updateStatus = true;
-      this.showMessage ='block';
-    });
+    // this.cs.updateProduct(id, updateData).subscribe(res =>{
+    //   this.updateStatus = true;
+    //   this.showMessage ='block';
+    // });
   }
 
 

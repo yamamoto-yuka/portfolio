@@ -22,12 +22,14 @@ import { TrAvailabilityComponent } from './trunkrecords/tr-availability/tr-avail
 import { TrHomeComponent } from './trunkrecords/tr-home/tr-home.component';
 import { TrHeaderComponent } from './trunkrecords/tr-header/tr-header.component';
 import { TrFooterComponent } from './trunkrecords/tr-footer/tr-footer.component';
-import { TrLoginComponent } from './trunkrecords/admin/tr-login/tr-login.component';
-import { TrSignupComponent } from './trunkrecords/admin/tr-signup/tr-signup.component';
-import { TrManageProductsComponent } from './trunkrecords/admin/tr-manage-products/tr-manage-products.component';
-import { TrUpdateComponent } from './trunkrecords/admin/tr-update/tr-update.component';
+import { TrLoginComponent } from './trunkrecords/mypage/tr-login/tr-login.component';
+import { TrSignupComponent } from './trunkrecords/mypage/tr-signup/tr-signup.component';
+import { TrManageProductsComponent } from './trunkrecords/mypage/tr-manage-products/tr-manage-products.component';
+import { TrUpdateComponent } from './trunkrecords/mypage/tr-update/tr-update.component';
 import { CommonStyleComponent } from './trunkrecords/common-style/common-style.component';
 import { CasestudyComponent } from './project-details/casestudy/casestudy.component';
+import { TrPasswordComponent } from './trunkrecords/mypage/password/tr-password.component';
+
 
 
 
@@ -57,6 +59,7 @@ import { CasestudyComponent } from './project-details/casestudy/casestudy.compon
     TrUpdateComponent,
     CommonStyleComponent,
     CasestudyComponent,
+    TrPasswordComponent,
   ],
   imports: [
     BrowserModule,

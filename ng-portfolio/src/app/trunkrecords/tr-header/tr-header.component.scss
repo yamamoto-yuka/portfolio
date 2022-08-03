@@ -78,58 +78,64 @@ nav {
   transition: all 0.6s;
 }
 
-.nav-links ul {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  background: $white;
+.nav-links {
+  ul {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    background: $white;
+    li {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      background: $white;
+      border-bottom: 1px solid $black;
+      a {
+        display: block;
+        padding: 1em 0;
+        font-size: 1rem;
+        font-family: "JetBrains Mono", monospace, sans-serif;
+        font-weight: bold;
+        color: $black;
+        text-decoration: none;
+      }
+      a:hover {
+        color: $white;
+      }
+    }
+    .icons { 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .account,
+      .cart {
+        padding-bottom: 0;
+        border-bottom: none;
+        width: fit-content;
+        svg {
+          height: 100%;
+          width: 30px;
+        }
+        svg:hover {
+          fill: $orange;
+        }
+      }
+      .account{
+        margin-right: 2rem;
+      }
+    }
+    li:hover {
+      background: $black;
+    }
+    li:last-child,
+    li .account,
+    li .cart {
+      background: none;
+    }
+  }
 }
 
-.nav-links ul li {
-  width: 100%;
-  padding: 0;
-  border-bottom: 1px solid $black;
-  list-style-type: none;
-}
 
-.nav-links ul li:last-child {
-  padding-bottom: 0;
-  border-bottom: none;
-}
-
-.nav-links ul li {
-  transition: all 0.3s ease-in-out;
-}
-
-.nav-links ul li:hover {
-  background: $black;
-}
-
-.nav-links ul li:last-child:hover {
-  background: none;
-}
-
-.nav-links ul li a {
-  display: block;
-  padding: 1em 0;
-  font-size: 1rem;
-  font-family: 'JetBrains Mono', monospace,sans-serif;
-  font-weight: bold;
-  color: $black;
-  text-decoration: none;
-}
-.nav-links ul li a:hover {
-  color: $white;
-}
-
-.nav-links svg{
-  height: 100%;
-  width: 30px;
-}
-
-.nav-links svg:hover{
-  fill:$orange;
-}
 
 // active class
 .nav-links.active {
@@ -138,7 +144,7 @@ nav {
 }
 
 @media screen and (min-width: 768px) {
-    .logo {
+  .logo {
     width: 70px;
   }
 }
@@ -165,13 +171,21 @@ nav {
     transition: none;
     background: transparent;
     opacity: 1;
-  }
-  .nav-links ul li {
-    border-bottom: none;
-  }
-
-  .nav-links ul {
-    display: flex;
-    background: transparent;
+    ul {
+      display: flex;
+      background: transparent;
+      li {
+        border-bottom: none;
+        background: transparent;
+      }
+      .icons { 
+        .account,
+        .cart {
+          svg {
+            width: 25px;
+          }
+        }
+      }
+    }
   }
 }

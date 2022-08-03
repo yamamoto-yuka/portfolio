@@ -10,12 +10,13 @@ import { ConferenceposterComponent } from './conferenceposter/conferenceposter.c
 import { TrHomeComponent } from './trunkrecords/tr-home/tr-home.component';
 import { TrApparelComponent } from './trunkrecords/tr-apparel/tr-apparel.component';
 import { TrAppareldetailsComponent } from './trunkrecords/tr-appareldetails/tr-appareldetails.component';
-import { TrSignupComponent } from './trunkrecords/admin/tr-signup/tr-signup.component';
-import { TrLoginComponent } from './trunkrecords/admin/tr-login/tr-login.component';
-import { TrManageProductsComponent } from './trunkrecords/admin/tr-manage-products/tr-manage-products.component';
-import { TrUpdateComponent } from './trunkrecords/admin/tr-update/tr-update.component';
+import { TrSignupComponent } from './trunkrecords/mypage/tr-signup/tr-signup.component';
+import { TrLoginComponent } from './trunkrecords/mypage/tr-login/tr-login.component';
+import { TrManageProductsComponent } from './trunkrecords/mypage/tr-manage-products/tr-manage-products.component';
+import { TrUpdateComponent } from './trunkrecords/mypage/tr-update/tr-update.component';
 import { LoginGuard } from './trunkrecords/auth/login.guard';
 import { CasestudyComponent } from './project-details/casestudy/casestudy.component';
+import { TrPasswordComponent } from './trunkrecords/mypage/password/tr-password.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -33,10 +34,11 @@ const routes: Routes = [
   {path:'trunkrecords/home', component:TrHomeComponent},
   {path:'trunkrecords/apparel', component:TrApparelComponent},
   {path:'trunkrecords/apparel/:id', component:TrAppareldetailsComponent},
-  {path:'trunkrecords/admin/register', component:TrSignupComponent},
-  {path:'trunkrecords/admin/login', component:TrLoginComponent},
-  {path:'trunkrecords/admin/home', component:TrManageProductsComponent, canActivate:[LoginGuard]},
+  {path:'trunkrecords/account/register', component:TrSignupComponent},
+  {path:'trunkrecords/login', component:TrLoginComponent},
+  {path:'trunkrecords/account', component:TrManageProductsComponent, canActivate:[LoginGuard]},
   {path:'trunkrecords/admin/update/:id', component:TrUpdateComponent, canActivate:[LoginGuard]},
+  {path:'trunkrecords/account/password', component:TrPasswordComponent,canActivate:[LoginGuard] }
 ];
 
 @NgModule({

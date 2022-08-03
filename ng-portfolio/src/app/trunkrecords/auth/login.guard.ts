@@ -13,7 +13,7 @@ export class LoginGuard implements CanActivate {
     if(this.cs.isLoggedIn()){
       return true;
     }else{
-      this.router.navigate(['/trunkrecords/admin/login']);
+      this.router.navigate(['/trunkrecords/login']);
       return false;
     }
   }

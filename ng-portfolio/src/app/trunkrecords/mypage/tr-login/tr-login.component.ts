@@ -23,10 +23,17 @@ export class TrLoginComponent implements OnInit {
       "password": this.password
     }
     this.cs.login(loginData).subscribe(res =>{
-      console.log(res.jwt);
       if(res.jwt){
         localStorage.setItem('jwt', res.jwt);
-        this.router.navigate(['/trunkrecords/admin/home']);
+        localStorage.setItem('id', res.user.id);
+        localStorage.setItem('email', res.user.email);
+        localStorage.setItem('username', res.user.username);
+        this.router.navigate(['/trunkrecords/account']);
+        console.log(localStorage);
+      }else{
+        console.log('false');
+        this.loginStatus = false;
+        this.showMessage ='block';
       }
     })
   }

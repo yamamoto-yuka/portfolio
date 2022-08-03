@@ -1,0 +1,62 @@
+<app-tr-header></app-tr-header>
+<main>
+  <div class="login-wrap">
+    <p class="title">Welcome back</p>
+    <form #form="ngForm" (ngSubmit)="login(username_, password_)">
+      <div class="mb-3">
+        <input
+          name="username"
+          #username_="ngModel"
+          [(ngModel)]="username"
+          id="username"
+          type="text"
+          class="form-control"
+          minlength="1"
+          required
+          placeholder="Username"
+        />
+      </div>
+      <div
+        class="alert alert-danger"
+        role="alert"
+        *ngIf="username_.touched && username_.invalid"
+      >
+        Please enter your Username.
+      </div>
+      <div class="mb-3">
+        <input
+          name="password"
+          #password_="ngModel"
+          [(ngModel)]="password"
+          id="password"
+          type="password"
+          class="form-control"
+          minlength="1"
+          required
+          placeholder="Password"
+        />
+      </div>
+      <div
+        class="alert alert-danger"
+        role="alert"
+        *ngIf="password_.touched && password_.invalid"
+      >
+        Please enter your password.
+      </div>
+      <div class="button-wrap">
+        <button type="submit" class="btn" [disabled]="form.invalid">
+          Log In
+        </button>
+        <p><a routerLink="/trunkrecords/account/register">Create Account</a></p>
+      </div>
+      <div
+        *ngIf="!loginStatus"
+        [style.display]="showMessage"
+        [class.error]="!loginStatus"
+      >
+        Your login credentials are incorect.
+      </div>
+    </form>
+  </div>
+</main>
+<app-tr-footer></app-tr-footer>

@@ -24,3 +24,12 @@ export interface Product{
 export interface Products {
   data:Product[]
 }
+
+export interface User{
+  jwt:string;
+  user:{
+    id:any;
+    username: string;
+    email: string;
+  };
+}

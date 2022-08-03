@@ -1,0 +1,50 @@
+<app-tr-header></app-tr-header>
+<main>
+  <div class="setting wrap">
+    <ul class="wrap">
+      <li>
+        <a (click)="signout()"
+          ><svg viewBox="0 0 512 512">
+            <path d="M160 416H96c-17.67 0-32-14.33-32-32V128c0-17.67 14.33-32 32-32h64c17.67 0 32-14.33 32-32S177.7 32 160 32H96C42.98 32 0 74.98 0 128v256c0 53.02 42.98 96 96 96h64c17.67 0 32-14.33 32-32S177.7 416 160 416zM502.6 233.4l-128-128c-12.51-12.51-32.76-12.49-45.25 0c-12.5 12.5-12.5 32.75 0 45.25L402.8 224H192C174.3 224 160 238.3 160 256s14.31 32 32 32h210.8l-73.38 73.38c-12.5 12.5-12.5 32.75 0 45.25s32.75 12.5 45.25 0l128-128C515.1 266.1 515.1 245.9 502.6 233.4z"/></svg>Sign out</a>
+      </li>
+      <!-- <li>
+        <a>
+          <svg viewBox="0 0 576 512">
+            <path d="M352 192H384C419.3 192 448 220.7 448 256V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V256C0 220.7 28.65 192 64 192H288V144C288 64.47 352.5 0 432 0C511.5 0 576 64.47 576 144V192C576 209.7 561.7 224 544 224C526.3 224 512 209.7 512 192V144C512 99.82 476.2 64 432 64C387.8 64 352 99.82 352 144V192z"/></svg>Password rest</a>
+      </li> -->
+    </ul>
+  </div>
+  <div class="account-info wrap">
+    <p class="title">Your Profile</p>
+    <div class="form">
+      <div class="mb-3">
+        <label for="username" class="form-label">User name</label>
+        <input
+          [(ngModel)]="username"
+          type="text"
+          class="form-control"
+          id="username"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input
+          [(ngModel)]="email"
+          type="text"
+          class="form-control"
+          id="eamil"
+        />
+      </div>
+      <button (click)="update()" class="btn">UPDATE</button>
+      <div
+        class="success-text"
+        *ngIf="updateStatus"
+        [style.display]="showMessage"
+        [class.success]="updateStatus"
+      >
+        Update successful.
+      </div>
+    </div>
+  </div>
+</main>
+<app-tr-footer></app-tr-footer>
