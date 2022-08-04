@@ -20,65 +20,50 @@ export class HomeComponent implements OnInit {
   @ViewChild('contact', { static: true }) contact: ElementRef<HTMLDivElement>;
   @ViewChild('topText', { static: true }) topText: ElementRef<HTMLDivElement>;
   @ViewChild('slider', { static: true }) slider: ElementRef<HTMLDivElement>;
+  activeClass:boolean = false;
 
   constructor() {}
+
+  showNav(){
+    this.activeClass = !this.activeClass;
+  }
 
   // OPENING ANIMATION
   timelineAnimation() {
     const tl = gsap.timeline();
     tl.fromTo(
       this.container.nativeElement,
-      1.5,
-      { height: '0' },
-      { height: '100vh', ease: Power2.easeInOut }
+      3,
+      { opacity:0 },
+      { opacity:1, ease: Power2.easeInOut }
     )
-      .fromTo(
-        this.container.nativeElement,
-        1.7,
-        { width: '0%' },
-        { width: '100%', ease: Power2.easeInOut }
-      )
+      // .fromTo(
+      //   this.container.nativeElement,
+      //   1.7,
+      //   { width: '0%' },
+      //   { width: '100%', ease: Power2.easeInOut }
+      // )
       .fromTo(
         this.topText.nativeElement,
-        1.5,
-        { opacity: 1, left: '30%' },
-        { opacity: 0, left: '0%', display: 'none', ease: Power2.easeOut },
-        '-=1.5'
+        2.5,
+        { opacity: 1},
+        { opacity: 0, display: 'none', ease: Power2.easeOut },
+        '-=2'
       )
       .fromTo(
         this.logo.nativeElement,
-        1.8,
-        { opacity: 0 },
-        { opacity: 1, ease: Power2.easeInOut }
-      )
-      .fromTo(
-        this.projects.nativeElement,
-        1.8,
+        1,
         { opacity: 0 },
         { opacity: 1, ease: Power2.easeInOut },
-        '-=1.8'
-      )
-      .fromTo(
-        this.about.nativeElement,
-        1.8,
-        { opacity: 0 },
-        { opacity: 1, ease: Power2.easeInOut },
-        '-=1.8'
+        '-=1'
       )
       .fromTo(
         this.headline.nativeElement,
-        1.8,
+        1,
         { opacity: 0 },
         { opacity: 1, ease: Power2.easeInOut },
-        '-=1.8'
+        '-=1'
       )
-      .fromTo(
-        this.contact.nativeElement,
-        1.8,
-        { opacity: 0 },
-        { opacity: 1, ease: Power2.easeInOut },
-        '-=1.98'
-      );
   }
 
   ngOnInit(): void {

@@ -1,21 +1,30 @@
 <main>
-  <h3 #topText class="top-text absolute-box">Be active.<br />Be curious.<br />Be human.</h3>
+  <h1 #topText class="top-logo absolute-box"><img src="../../assets/logo_white.svg" alt="YUKA YAMAMOTO logo image"></h1>
   <div #slider class="slider absolute-box"></div>
 
   <div #container class="hero-container">
     <canvas #myCanvas id="myCanvas"></canvas>
 
-    <div class="top-nav absolute-box" >
-      <ul>
-        <li #projects><a routerLink="/projects">PROJECTS</a></li>
-        <li #about ><a routerLink="/about">ABOUT</a></li>
-      </ul>
-    </div>
+    <header>
+      <div (click)="showNav()" [class.active]="activeClass" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav>
+      <div [class.active]="activeClass" class="nav-links">
+        <ul>
+          <li><a href="">PROJECTS</a></li>
+          <li><a href="">ABOUT</a></li>
+          <li><a href="">CONTACT</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
     <div #headline class="headline absolute-box">
       <div class="title">
-        <h1>YUKA YAMAMOTO</h1>
-        <h2>Front-end Developer</h2>
+        <h1>Front-end Developer</h1>
       </div>
 
       <div class="description">
@@ -34,9 +43,6 @@
       </a>
     </div>
 
-    <div #contact class="contact absolute-box">
-      <a routerLink="/contact"><p>GET IN TOUCH</p></a>
-    </div>
 
   </div>
 </main>
