@@ -1,8 +1,8 @@
 <header>
   <div class="header-inner">
+    <h1 class="logo" ><a routerLink="/"><img src="../../assets/logo.svg" alt=""></a></h1>
     <nav [class.active]="nav">
       <ul class="nav-items">
-        <li class="nav-item"><a routerLink="/">HOME</a></li>
         <li class="nav-item"><a [class.activePage]="projectsActive" routerLink="/projects">PROJECTS</a></li>
         <li class="nav-item"><a [class.activePage]="aboutActive" routerLink="/about">ABOUT</a></li>
         <li class="nav-item"><a [class.activePage]="contactActive" routerLink="/contact">CONTACT</a></li>
@@ -10,7 +10,7 @@
     </nav>
     <button [class.active]="ham" (click)="hamburgerBtn()" class="hamburger">
       <span ></span>
-      <span >MENU</span>
+      <span ></span>
       <span ></span>
     </button>
   </div>

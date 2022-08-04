@@ -9,16 +9,6 @@ export class FooterComponent implements OnInit {
 
   constructor(private renderer:Renderer2) { }
 
-  onIntersection(event: any): void {
-    console.log(event);
-    if (event.visible) {
-      this.renderer.addClass(event.target, 'active');
-    }else{
-      this.renderer.removeClass(event.target, 'active');
-    }
- 
-  }
-
   ngOnInit(): void {
   }
 

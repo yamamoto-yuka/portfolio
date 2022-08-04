@@ -49,13 +49,13 @@ app-footer {
   }
   li:hover,
   li:active {
-    color: $white;
+    color: $yellow;
   }
 }
 
 //  For active category
 li.active {
-  color: $white;
+  color: $yellow;
 }
 
 // For Mobile category
@@ -116,7 +116,6 @@ li.active {
 main {
   min-height: 70vh;
   flex-grow: 1;
-  margin-top: 10vh;
 }
 
 .wrap {

@@ -48,40 +48,14 @@ main {
           width: 100%;
           display: block;
           letter-spacing: 5px;
+          font-size: 1rem;
           font-family: "Anton", sans-serif;
           color: $black;
-          transition: all 0.5s ease-in-out;
+          transition: all .3s ease-in-out;
         }
         a:hover,
         a:active {
-          color: $Dyellow;
-          transition: all 0.8s ease-in-out;
-        }
-
-        a:after,
-        a:before {
-          content: "";
-          width: 100%;
-          position: relative;
-          top: auto;
-          bottom: 0;
-          display: block;
-          margin: 0 auto;
-          border: 1px solid $black;
-          transition: all 0.8s ease-in-out;
-        }
-
-        a:hover:after,
-        a:hover::before {
-          width: 0%;
-          border-color: $Dyellow;
-          transition: width 0.8s ease-in-out;
-        }
-
-        a:hover:before {
-          width: 0%;
-          top: 0;
-          bottom: auto;
+          color: $yellow;
         }
       }
       li:last-child {

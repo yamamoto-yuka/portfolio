@@ -1,105 +1,12 @@
 @import "../app.component.scss";
 
-header{
-  height: 10vh;
-  position: relative;
-}
-
-nav {
-  .nav-links {
-    height: 100vh;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateX(100%);
-    background-color: $black;
-    opacity: 0;
-    transition: opacity,transform  0.5s ease-in-out;
-    z-index: 2;
-    ul {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 0;
-      li {
-        padding-bottom: 1.5rem;
-        a {
-          width: 100%;
-          display: block;
-          font-size: 3rem;
-          letter-spacing: 5px;
-          font-family: "Anton", sans-serif;
-          transition: all 0.3s ease-in-out;
-        }
-        a:hover,
-        a:active {
-          color: $yellow;
-        }
-      }
-      li:last-child {
-        padding-bottom: 0;
-      }
-    }
-  }
-  // .active
-.nav-links.active {
-  transform: translateX(0);
-  opacity: 1;
+// opening animation
+.slider {
+  top: 0;
+  height: 100%;
+  width: 100%;
   background-color: $black;
 }
-}
-
-
-.hamburger{
-  height: 100%;
-  width: 55px;
-  position: absolute;
-  top: 50%;
-  left: 75%;
-  transform: (-75%, -50%);
-  background-color: transparent;
-  border-color: transparent;
-  z-index: 3;
-  span{
-    height: 1.5px;
-    width: 100%;
-    position: relative;
-    display: block;
-    background-color: $white;
-    transition: all .3s ease-in-out;
-  }
-  span:nth-child(1){
-    width: 45%;
-    top: 0;
-  }
-  span:nth-child(2){
-    width: 0;
-    margin: 12px 0;
-  }
-  span:nth-child(3){
-    top: 0;
-  }
-}
-
-.hamburger.active{
-  span:nth-child(1) {
-    width: 100%;
-    top: 13px;
-    transform: rotate(45deg);
-  }
-  span:nth-child(2) {
-    opacity: 0;
-  }
-  span:nth-child(3) {
-    top: -13px;
-    transform: rotate(-45deg);
-  }
-}
-
-
-
 
 .top-logo {
   top: 50%;
@@ -111,24 +18,10 @@ nav {
   font-weight: 400;
   font-family: "Anton", sans-serif;
   z-index: 1;
-  img{
+  img {
     height: 100%;
     width: 130px;
-
   }
-}
-
-.slider {
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-color: $black;
-}
-
-main {
-  height: 100%;
-  width: 100%;
-  @include flex();
 }
 
 .hero-container {
@@ -155,6 +48,102 @@ main {
   left: 0;
 }
 
+// nav
+header {
+  height: 10vh;
+  position: relative;
+}
+
+nav {
+  .nav-links {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(100%);
+    background-color: $black;
+    opacity: 0;
+    transition: opacity, transform 0.5s ease-in-out;
+    z-index: 2;
+    ul {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0;
+      li {
+        padding-bottom: 1.5rem;
+        a {
+          width: 100%;
+          font-size: 3rem;
+          letter-spacing: 5px;
+          font-family: "Anton", sans-serif;
+          transition: all .3s ease-in-out;
+        }
+        a:hover,
+        a:active {
+          color: $yellow;
+        }
+      }
+      li:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+  // .active
+  .nav-links.active {
+    transform: translateX(0);
+    opacity: 1;
+    background-color: $black;
+  }
+}
+
+.hamburger {
+  height: 100%;
+  width: 55px;
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: (-75%, -50%);
+  background-color: transparent;
+  border-color: transparent;
+  z-index: 3;
+  span {
+    height: 1.5px;
+    width: 100%;
+    position: relative;
+    display: block;
+    background-color: $offWhite;
+    transition: all 0.3s ease-in-out;
+  }
+  span:nth-child(1) {
+    width: 45%;
+    top: 0;
+  }
+  span:nth-child(2) {
+    width: 0;
+    margin: 12px 0;
+  }
+  span:nth-child(3) {
+    top: 0;
+  }
+}
+
+.hamburger.active {
+  span:nth-child(1) {
+    width: 100%;
+    top: 13px;
+    transform: rotate(45deg);
+  }
+  span:nth-child(2) {
+    opacity: 0;
+  }
+  span:nth-child(3) {
+    top: -13px;
+    transform: rotate(-45deg);
+  }
+}
 
 .headline {
   width: 100%;
@@ -190,18 +179,13 @@ main {
   }
 }
 
-
-
 @media screen and (max-width: 320px) {
-
   .logo {
     width: 60px;
     top: 90%;
   }
 
-
   .headline {
-
     .title {
       h1 {
         font-size: 2.2rem;
@@ -211,35 +195,33 @@ main {
     }
     .description {
       p {
-        font-size: .8rem;
+        font-size: 0.8rem;
       }
     }
   }
 }
 
 @media screen and (min-width: 768px) {
-  .hamburger{
-  left: 90%;
-  transform: (-90%, -50%);
+  .hamburger {
+    left: 90%;
+    transform: (-90%, -50%);
   }
 }
 
 @media screen and (min-width: 1024px) {
-
   .headline {
     width: initial;
-    top: 95%;
+    top: 90%;
     left: 5%;
-    transform: translate(-5%, -95%);
+    transform: translate(-5%, -90%);
     .description {
       width: 100%;
     }
   }
 
   .logo {
-    top: 95%;
+    top: 90%;
     left: 95%;
-    transform: translate(-95%, -95%);
+    transform: translate(-95%, -90%);
   }
-
 }

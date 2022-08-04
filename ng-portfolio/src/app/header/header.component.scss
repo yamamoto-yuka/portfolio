@@ -1,13 +1,11 @@
 @import '../app.component.scss';
 
 header {
-  height: 8vh;
+  height: 10vh;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: $offWhite;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
   z-index: 5;
 }
 
@@ -16,6 +14,20 @@ header {
   position: relative;
   @include flex();
   justify-content: space-around;
+}
+
+.logo{
+  height: 100%;
+  width: 80px;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(-10%, -50%);
+  img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
 }
 
 nav,
@@ -37,60 +49,34 @@ nav {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 0;
+  padding-bottom: 1.5rem;
   a {
     width: 100%;
     display: block;
-    margin-bottom: 3rem;
-    font-size: 1.3rem;
-    letter-spacing: 1.3px;
+    font-size: 3rem;
+    letter-spacing: 5px;
     font-family: "Anton", sans-serif;
-    text-align: center;
+    transition: all 0.3s ease-in-out;
     color: $black;
-    @include transition();
   }
   a:hover,
   a:active {
-    font-weight: bold;
-    @include transition();
-  }
-  a:after,
-  a:before {
-    content: "";
-    width: 0%;
-    position: relative;
-    bottom: 0;
-    display: block;
-    margin: 0 auto;
-    border: 1px solid $black;
-    @include transition();
-  }
-  a:hover:after,
-  a:hover:before {
-    width: 100%;
-    border-color: $black;
-    @include transition();
-  }
-  a:hover:before {
-    width: 100%;
-    top: 0;
-    bottom: auto;
-  }
-  .nav-item:last-child {
-    a {
-      margin-bottom: 0;
-    }
+    color: $yellow;
   }
 }
 
 .hamburger {
   height: 100%;
   width: 55px;
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  transform: translate(-90%, -50%);
   background-color: transparent;
   border-color: transparent;
   z-index: 7;
   span {
-    height: 1px;
+    height: 1.5px;
     width: 100%;
     position: relative;
     display: block;
@@ -98,14 +84,12 @@ nav {
     @include transition();
   }
   span:nth-child(1) {
-    width: 30%;
+    width: 45%;
     top: 0;
   }
   span:nth-child(2) {
-    margin-bottom: 24px;
-    font-family: "Anton", sans-serif;
-    background-color: transparent;
-    color: $black;
+    width: 0;
+    margin: 12px 0;
   }
   span:nth-child(3) {
     top: 0;
@@ -124,59 +108,19 @@ nav.active {
   }
   span:nth-child(1) {
     width: 100%;
-    top: 13px;
+    top: 14px;
     transform: rotate(45deg);
   }
   span:nth-child(2) {
     opacity: 0;
   }
   span:nth-child(3) {
-    top: -13px;
+    top: -14px;
     transform: rotate(-45deg);
   }
 }
 
 // For individual page
 .activePage {
-  color: $black !important;
-}
-
-.activePage::after,
-.activePage::before {
-  width: 100% !important;
-}
-
-@media screen and (min-width: 1024px) {
-  nav {
-    height: inherit;
-    width: 50%;
-    position: static;
-    display: flex;
-    justify-content: flex-end;
-    transform: initial;
-  }
-
-  .header-title {
-    margin-bottom: 0;
-  }
-
-  .nav-items {
-    width: 100%;
-    position: inherit;
-    top: 0;
-    left: 0;
-    transform: translate(0, 0);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-bottom: 0;
-    a {
-      margin-bottom: 0;
-      font-size: 1rem;
-    }
-  }
-
-  .hamburger {
-    display: none;
-  }
+  color: $yellow !important;
 }

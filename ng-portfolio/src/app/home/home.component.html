@@ -1,48 +1,42 @@
-<main>
-  <h1 #topText class="top-logo absolute-box"><img src="../../assets/logo_white.svg" alt="YUKA YAMAMOTO logo image"></h1>
-  <div #slider class="slider absolute-box"></div>
+<h1 #topText class="top-logo absolute-box">
+  <img src="../../assets/logo_white.svg" alt="YUKA YAMAMOTO logo image" />
+</h1>
+<div #slider class="slider absolute-box"></div>
 
-  <div #container class="hero-container">
-    <canvas #myCanvas id="myCanvas"></canvas>
-
-    <header>
-      <div (click)="showNav()" [class.active]="activeClass" class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <nav>
+<div #container class="hero-container">
+  <canvas #myCanvas id="myCanvas"></canvas>
+  <header>
+    <div (click)="showNav()" [class.active]="activeClass" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav>
       <div [class.active]="activeClass" class="nav-links">
         <ul>
-          <li><a href="">PROJECTS</a></li>
-          <li><a href="">ABOUT</a></li>
-          <li><a href="">CONTACT</a></li>
+          <li><a routerLink="/projects">PROJECTS</a></li>
+          <li><a routerLink="/about">ABOUT</a></li>
+          <li><a routerLink="/contact">CONTACT</a></li>
         </ul>
       </div>
     </nav>
   </header>
 
-    <div #headline class="headline absolute-box">
-      <div class="title">
-        <h1>Front-end Developer</h1>
-      </div>
-
-      <div class="description">
-        <p>Hi There. My name is Yuka Yamamoto.</p>
-        <p>
-          I'm looking for a full-time position as a Front-end
-          Developer.
-        </p>
-        <p>I would like to help to make your experience wonderful.</p>
-      </div>
+  <div #headline class="headline absolute-box">
+    <div class="title">
+      <h1>Front-end Developer</h1>
     </div>
 
-    <div #logo class="logo absolute-box">
-      <a routerLink="/">
-        <img src="../../assets/logo_white.svg" alt="YUKA YAMAMOTO logo image">
-      </a>
+    <div class="description">
+      <p>Hi There. My name is Yuka Yamamoto.</p>
+      <p>I'm looking for a full-time position as a Front-end Developer.</p>
+      <p>I would like to help to make your experience wonderful.</p>
     </div>
-
-
   </div>
-</main>
+
+  <div #logo class="logo absolute-box">
+    <a routerLink="/">
+      <img src="../../assets/logo_white.svg" alt="YUKA YAMAMOTO logo image" />
+    </a>
+  </div>
+</div>

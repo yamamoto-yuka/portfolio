@@ -10,35 +10,16 @@ footer {
     width: fit-content;
     top: 80%;
     p {
-      font-size: 1.3rem;
-      letter-spacing: 0.2rem;
-      font-weight:bold;
-      font-family: 'Anton', sans-serif;
-      color: $Dyellow;
-      border-top: 1px solid $Dyellow;
-      border-bottom: 1px solid $Dyellow;
-      opacity: 0;
-      transition: all .8s ease-in-out;
+      font-size: 1.8rem;
+      letter-spacing: 3px;
+      font-family: "Anton", sans-serif;
+      transition: all .3s ease-in-out;
+      color: $black;
     }
     p:hover {
-      border-top: 1px solid $yellow;
-      border-bottom: 1px solid $yellow;
       color: $yellow;
     }
-    p.active{
-      opacity: 1;
-    }
   }
-  .logo-wrap{
-    height: 3.5vh;
-    margin-top: 1.5rem;
-    img{
-      height: 100%;
-      width: 100%;
-      object-fit: contain;
-    }
-  }
-  
 }
 
 small {
