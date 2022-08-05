@@ -1,7 +1,7 @@
 @import '../app.component.scss';
 
 header {
-  height: 10vh;
+  height: 15vh;
   width: 100%;
   position: fixed;
   top: 0;
@@ -18,11 +18,11 @@ header {
 
 .logo{
   height: 100%;
-  width: 80px;
+  width: 100px;
   position: absolute;
   top: 50%;
-  left: 10%;
-  transform: translate(-10%, -50%);
+  left: 5.4%;
+  transform: translate(-5.4%, -50%);
   img{
     height: 100%;
     width: 100%;
@@ -57,7 +57,7 @@ nav {
     letter-spacing: 5px;
     font-family: "Anton", sans-serif;
     transition: all 0.3s ease-in-out;
-    color: $black;
+    color: $offWhite;
   }
   a:hover,
   a:active {
@@ -80,7 +80,7 @@ nav {
     width: 100%;
     position: relative;
     display: block;
-    background-color: $black;
+    background-color: $offWhite;
     @include transition();
   }
   span:nth-child(1) {
@@ -99,7 +99,7 @@ nav {
 // .active
 nav.active {
   transform: translateX(0);
-  background-color: $offWhite;
+  background-color: $black;
 }
 
 .hamburger.active {

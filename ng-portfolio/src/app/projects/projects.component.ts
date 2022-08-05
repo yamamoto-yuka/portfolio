@@ -1,7 +1,16 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  ViewChildren,
+  QueryList,
+} from '@angular/core';
 import { Project } from '../interfaces/interface';
 import { CommonService } from '../services/common.service';
 import { NavigationEnd, Router } from '@angular/router';
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
 @Component({
   selector: 'app-projects',
@@ -9,90 +18,52 @@ import { NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent implements OnInit {
-  projects: Project[] = [];
-  // Change text css for active category
-  activeAll: boolean = true;
-  activeCaseStudy: boolean = false;
-  activeDevelopment: boolean = false;
-  activeOther: boolean = false;
+  @ViewChild('projectsSection', { static: true })
+  projectsSection: ElementRef<HTMLDivElement>;
+  @ViewChild('wrapper', { static: true }) wrapper: ElementRef<HTMLDivElement>;
 
-  // Category Btn For Mobile
-  mobileCategory: boolean = false;
-  // Change Btn text
-  showCategoryText: boolean = true;
-  showCloseText: boolean = false;
+  projects: any[] = [
+    // {
+    //   id:6,
+    //   attributes: {
+    //     ClientName: 'trunk records',
+    //     Slug: '/development/trunkrecords',
+    //     image:'https://res.cloudinary.com/yuka-web/image/upload/v1659563542/trunkrecords_thumbnail_e72c206c01.png',
+    //     skills: {
+    //       data: [
+    //         {
+    //           attributes: {
+    //             SkillName: 'Angular',
+    //           },
+    //         },
+    //         {
+    //           attributes: {
+    //             SkillName: 'Strapi',
+    //           },
+    //         },
+    //         {
+    //           attributes: {
+    //             SkillName: 'Illustrator',
+    //           },
+    //         },
+    //         {
+    //           attributes: {
+    //             SkillName: 'Photoshop',
+    //           },
+    //         },
+    //         {
+    //           attributes: {
+    //             SkillName: 'Figma',
+    //           },
+    //         },
+    //       ],
+    //     },
+    //   },
+    // },
+   
+  ];
 
-  constructor(
-    private cs: CommonService,
-    private renderer: Renderer2,
-    private router: Router
-  ) {}
-
-  // Btn to show all data
-  allBtn() {
-    // 1.All Display properties in the json data are true
-    this.projects.filter((value) => {
-      value.attributes.Display = true;
-    });
-    // 2. Add active css of all Btn text
-    this.activeAll = true;
-    // 3. Remove active css of other Btn text
-    this.activeDevelopment = this.activeCaseStudy = this.activeOther = false;
-  }
-
-  // Method for filtering each category data.
-  // Get category values from Json data
-  Filter(ClickedCategory: string) {
-    this.projects.filter((value) => {
-      // If this value equals the parameter, Then the display property in the json data is true.
-      if (value.attributes.Category === ClickedCategory) {
-        value.attributes.Display = true;
-      } else {
-        value.attributes.Display = false;
-      }
-    });
-  }
-
-  // Development
-  developmentBtn() {
-    // 1.Only developments display properties in the json data are true
-    this.Filter('development');
-    // 2. Add active css of development Btn text
-    this.activeDevelopment = true;
-    // 3. Remove active css of other Btn text
-    this.activeAll = this.activeCaseStudy = this.activeOther = false;
-  }
-
-  // CaseStudy
-  caseStudyBtn() {
-    this.Filter('casestudy');
-    this.activeCaseStudy = true;
-    this.activeAll = this.activeDevelopment = this.activeOther = false;
-  }
-
-  // Others
-  othersBtn() {
-    this.Filter('other');
-    this.activeOther = true;
-    this.activeAll = this.activeDevelopment = this.activeCaseStudy = false;
-  }
-
-  // Category Btn For Mobile
-  mobileCategoryBtn() {
-    this.mobileCategory = !this.mobileCategory;
-    this.showCategoryText = !this.showCategoryText;
-    this.showCloseText = !this.showCloseText;
-  }
-
-  // Intersection Observer API
-  onIntersection(event: any): void {
-    console.log(event);
-    if (event.visible) {
-      this.renderer.addClass(event.target, 'scrollanime');
-    } else {
-      this.renderer.removeClass(event.target, 'scrollanime');
-    }
-  }
+  constructor(private cs: CommonService, private router: Router) {}
 
   ngOnInit(): void {
     // Scroll to Top
@@ -101,12 +72,73 @@ export class ProjectsComponent implements OnInit {
         window.scrollTo(0, 0);
       }
     });
+    // this.cs.getProjects().subscribe((res) => {
+    //   this.projects = res.data;
+    //   console.log(this.projects);
+    // });
 
-    this.cs.getProjects().subscribe((res) => {
-      console.log(res);
-      this.projects = res.data;
-      console.log(this.projects);
-    });
+    gsap.registerPlugin(ScrollTrigger);
+    this.scrollTgr();
   }
+  scrollTgr() {
+    if (window.matchMedia('(max-width: 1023px)').matches) {
+    } else {
+      gsap.registerPlugin(ScrollTrigger);
+      ScrollTrigger.defaults({
+        markers: false,
+      });
 
+      let points = gsap.utils.toArray('.point');
+      console.log(points);
+      let indicators: any = gsap.utils.toArray('.indicator');
+
+      let height = 100 * points.length;
+      console.log(points.length);
+
+      gsap.set('.indicators', { display: 'flex' });
+
+      let tl = gsap.timeline({
+        duration: points.length,
+        scrollTrigger: {
+          trigger: '.projectsSection',
+          start: 'top center',
+          end: '+=' + height + '%',
+          scrub: 2,
+          id: 'points',
+        },
+      });
+
+      let pinner = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.projectsSection .wrapper',
+          start: 'top top',
+          end: '+=' + height + '%',
+          scrub: true,
+          pin: '.projectsSection .wrapper',
+          pinSpacing: true,
+          id: 'pinning',
+        },
+      });
+
+      points.forEach((elem: any, i) => {
+        console.log(elem);
+        gsap.set(elem, { position: 'absolute', top: 0 });
+        tl.to(indicators[i], { backgroundColor: '#917C46', duration: 0.3 }, i);
+        tl.from(elem.querySelector('img'), { autoAlpha: 0 }, i);
+        tl.from(
+          elem.querySelector('article'),
+          { autoAlpha: 0, translateY: 100 },
+          i
+        );
+        if (i != points.length - 1) {
+          tl.to(
+            indicators[i],
+            { backgroundColor: '#b59b59', duration: 0.3 },
+            i + 0.75
+          );
+          tl.to(elem.querySelector('article'), { autoAlpha: 0 }, i + 0.75);
+        }
+      });
+    }
+  }
 }
