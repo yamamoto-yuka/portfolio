@@ -30,7 +30,7 @@ main {
 
 .projectsSection {
   position: relative;
-  background-color: #0d0d0d;
+  background-color: #000000;
 }
 
 .indicators {
@@ -58,7 +58,7 @@ main {
   top: 70%;
   left: 8%;
   width: 1.5px;
-  animation: topTobottom 3s normal forwards ease-in-out;
+  animation: topTobottom 3s infinite ease-in-out;
   background-color: white;
 }
 
@@ -199,7 +199,6 @@ small {
     top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: topTobottom 3s normal infinite ease-in-out;
   }
 
   .point {

@@ -17,7 +17,7 @@ footer {
 
 main {
   min-height: 87vh;
-  margin-top: 8vh;
+  margin-top: 10vh;
   position: relative;
   padding: 2rem 2rem;
   @include flex();
@@ -49,6 +49,7 @@ main {
           display: block;
           letter-spacing: 5px;
           font-size: 1rem;
+          text-transform: uppercase;
           font-family: "Anton", sans-serif;
           color: $black;
           transition: all .3s ease-in-out;
@@ -69,19 +70,32 @@ main {
     input {
       padding: 10px;
     }
-    button {
+    input:focus,
+    textarea:focus{
+      color: $black;
+      outline: none !important;
+      border:1px solid $black;
+      box-shadow: 0 0 5px rgb(176, 176, 176);
+    }
+    .form-control {
+      border-radius: 0 !important;
+    }
+    .submitbtn {
       margin-top: 1rem;
+      padding: 10px 20px;
+      border: 1px solid $black;
+      font-size: 1rem;
       --bs-btn-border-radius: none;
     }
-  }
-
-  .success-message {
-    span {
-      font-family: "Anton", sans-serif;
+    .submitbtn:hover{
+      color: $offWhite;
+      background-color: $black;
     }
   }
 
+
   .alert {
+    font-size: .8rem;
     background-color: transparent;
     border: none;
   }
@@ -100,11 +114,36 @@ main {
   }
 }
 
+
+
 footer {
   height: 5vh;
   small {
     font-size: 0.6rem;
   }
+}
+@media screen and (max-width: 320px) {
+  main {
+    .desc-wrap {
+      h2 {
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+      }
+      p {
+        font-size: 0.5rem;
+      }
+      ul {
+        li {
+          font-size: .8rem;
+          a {
+            letter-spacing: 3px;
+            font-size: .8rem;
+          }
+        }
+      }
+    }
+  }
+
 }
 
 @media screen and (min-width: 768px) {

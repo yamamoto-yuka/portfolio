@@ -3,13 +3,13 @@
 h3,
 p,
 li {
-  color: $black;
+  color: $offWhite;
 }
 
 .flexContainer {
   display: flex;
   flex-direction: column;
-  background: $offWhite;
+  background: #000;
 }
 
 // Header
@@ -28,19 +28,28 @@ main {
 }
 
 section {
-  min-height: 80vh;
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
-  padding: 5rem 2rem;
 }
 
-h3 {
+h1,
+h2 {
   width: 100%;
-  padding-bottom: 2rem;
-  font-size: 2.3rem;
+  padding-bottom: 1rem;
+  font-size: 3rem;
   font-family: "Anton", sans-serif;
   letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+.about {
+  margin-top: 10vh;
+  padding: 3rem 2rem 5rem 2rem;
 }
 
 .about-box {
@@ -50,37 +59,26 @@ h3 {
 
 .about-item {
   flex-direction: column;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
   .about-items {
-    margin-bottom: 3rem;
     .about-tittle {
-      margin-bottom: 0.5rem;
-      font-size: 1.3rem;
-      letter-spacing: 2px;
-      font-family: "Anton", sans-serif;
-    }
-    .about-desc {
-      margin-bottom: 2rem;
-      font-size: 0.8rem;
-      letter-spacing: 1.1px;
+      margin-bottom: 1rem;
     }
   }
 }
-
-.resumeLink {
-  transform: translateX(0px);
-  transition: all 1.5s ease-in-out;
-  p {
-    font-size: 2rem;
-    font-family: "Anton", sans-serif;
-    transition: color 0.3s ease-in-out;
+.about-personal {
+  h2 {
+    margin-bottom: 1rem;
   }
-  p:hover {
-    -webkit-text-stroke: 1.5px $black;
-    color: transparent;
+  .personal-item {
+    flex-direction: column;
+    .personal-desc {
+      .personal-title {
+        margin-bottom: 1rem;
+      }
+    }
   }
 }
-
 .video-wrap {
   video {
     width: 300px;
@@ -88,128 +86,92 @@ h3 {
   }
 }
 
-.skill-frontEnd,
-.skill-backEnd,
-.skill-design,
-.skill-else {
-  width: 100%;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.skill-frontEnd,
-.skill-backEnd,
-.skill-design {
-  margin-bottom: 3rem;
-}
-
-.skill-title {
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  font-family: "Anton", sans-serif;
-  letter-spacing: 1.6px;
-}
-
-.skill-name {
-  font-size: 1rem;
+.skills {
+  padding: 0 2rem 0 1rem;
+  h1 {
+    padding-left: 1rem;
+  }
 }
 
 .skill {
   width: 100%;
-  margin: 1rem 0;
-}
-
-.skill-info {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  .icon-wrap {
-    width: 20px;
-    margin-right: 1rem;
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: contain;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 5rem;
+  h2 {
+    padding-left: 1rem;
+  }
+  ul {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    li {
+      margin-bottom: 1rem;
+      padding: 0 1rem;
+      border-right: 1px solid $offWhite;
+    }
+    li:last-child {
+      border-right: none;
     }
   }
 }
 
-.skill-percentage {
-  opacity: 0;
-  transition: opacity 0.6s;
-}
-
-.skill-bar-container {
-  height: 15px;
-  position: relative;
-  background-color: $white;
-  overflow: hidden;
-}
-
-.skill-bar {
-  height: 80%;
-  width: 0;
-  position: relative;
-  top: 50%;
-  left: 1px;
-  transform: translateY(-50%);
-  background-color: $black;
-  transition: width 3s cubic-bezier(0.22, 1, 0.36, 1);
+.resumeLink {
+  margin-bottom: 5rem;
+  p {
+    font-size: 2rem;
+    font-family: "Anton", sans-serif;
+    transition: color 0.3s ease-in-out;
+  }
+  p:hover {
+    color: $yellow;
+  }
 }
 
 @media screen and (min-width: 768px) {
+  main {
+    padding: 2rem 4rem;
+  }
   .about-box {
-    flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
   }
 
-  .resumeLink {
-    transform: translateX(-130px);
-    transition: all 1.5s ease-in-out;
-  }
-  
-
   .about-item {
-    width: 50%;
-    flex-direction: column;
-    margin-bottom: 0;
-    .about-items {
-      margin-bottom: 3rem;
-      padding: 0 1.5rem;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .about-personal {
+    width: 100%;
+    h2 {
+      padding: 0rem;
+    }
+    .personal-item {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      .personal-desc {
+        width: 50%;
+        padding: 0rem;
+      }
     }
   }
 
-  .video-wrap {
-    video {
-      width: 350px;
-      height: 350px;
-    }
-  }
+
 }
 
 @media screen and (min-width: 1024px) {
-  section {
-    padding: 2rem 10rem;
+  main {
+    padding: 0 15rem;
   }
-  h3 {
-    padding: 3rem 0;
-    font-size: 2.8rem;
-  }
-
-  .about-item {
-    .about-items {
-      padding: 0 3.5rem;
-    }
-  }
-
-  .brand-gif {
-    min-height: 70vh;
+  .about {
+    padding: 3rem 2rem 8rem 2rem;
   }
 }
 
 @media screen and (min-width: 1920px) {
-  section {
-    padding: 5rem 20rem;
+  main {
+    padding: 0 20rem;
   }
+
 }

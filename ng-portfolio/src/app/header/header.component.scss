@@ -1,4 +1,4 @@
-@import '../app.component.scss';
+@import "../app.component.scss";
 
 header {
   height: 15vh;
@@ -16,14 +16,14 @@ header {
   justify-content: space-around;
 }
 
-.logo{
+.logo {
   height: 100%;
   width: 100px;
   position: absolute;
   top: 50%;
   left: 5.4%;
   transform: translate(-5.4%, -50%);
-  img{
+  img {
     height: 100%;
     width: 100%;
     object-fit: contain;
@@ -31,7 +31,8 @@ header {
 }
 
 nav,
-.nav-items {
+.nav-items,
+.social {
   position: absolute;
 }
 
@@ -43,9 +44,11 @@ nav {
   transform: translateX(100%);
   @include transition();
   z-index: 6;
+  background-color: $black;
 }
 
-.nav-items {
+.nav-items,
+.social {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -53,7 +56,7 @@ nav {
   a {
     width: 100%;
     display: block;
-    font-size: 3rem;
+    font-size: 2.8rem;
     letter-spacing: 5px;
     font-family: "Anton", sans-serif;
     transition: all 0.3s ease-in-out;
@@ -62,6 +65,20 @@ nav {
   a:hover,
   a:active {
     color: $yellow;
+  }
+}
+
+.social {
+  top: 80%;
+  transform: translate(-50%, -80%);
+  display: flex;
+  li {
+    margin-right: 2rem;
+    a {
+      font-size: 0.8rem;
+      letter-spacing: initial;
+      font-family: "lato", sans-serif;
+    }
   }
 }
 
@@ -99,7 +116,6 @@ nav {
 // .active
 nav.active {
   transform: translateX(0);
-  background-color: $black;
 }
 
 .hamburger.active {
@@ -120,7 +136,58 @@ nav.active {
   }
 }
 
-// For individual page
-.activePage {
-  color: $yellow !important;
+// @Input
+.logohide {
+  display: none;
+}
+
+.show {
+  display: initial;
+}
+
+.hamburger.navshow {
+  span {
+    background-color: $black;
+  }
+}
+
+.hamburger.active.navshow{
+  span {
+    background-color: $offWhite;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .nav-items,
+  .social {
+    a {
+      font-size: 3rem;
+    }
+  }
+
+  .social {
+    li {
+      a {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .nav-items,
+  .social {
+    a {
+      font-size: 3.5rem;
+    }
+  }
+
+  .social {
+    li {
+      a {
+        font-size: 1.2rem;
+      }
+    }
+  }
 }

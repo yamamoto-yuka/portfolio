@@ -17,7 +17,7 @@ export class AboutComponent implements OnInit {
 
   scrollAnimation(event: any) {
     if (event.visible) {
-      this.renderer.setStyle(event.target, 'transform', 'translateX(0px)');
+      this.renderer.setStyle(event.target, 'transform', 'translateX(-50%)');
     }
   }
 

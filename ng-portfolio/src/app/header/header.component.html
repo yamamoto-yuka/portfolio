@@ -1,17 +1,25 @@
 <header>
   <div class="header-inner">
-    <h1 class="logo" ><a routerLink="/"><img src="../../assets/logo_white.svg" alt=""></a></h1>
-    <nav [class.active]="nav">
+    <h1 class="logo">
+      <a routerLink="/" class="logohide"  [class.show]="whitelogo"><img src="../../assets/logo_white.svg" alt="" /></a>
+      <a routerLink="/" class="logohide" [class.show]="blacklogo" ><img src="../../assets/logo.svg" alt="" /></a>
+    </h1>
+    <nav [class.active]="nav" [class.navshow]="blacknav">
       <ul class="nav-items">
-        <li class="nav-item"><a [class.activePage]="projectsActive" routerLink="/projects">PROJECTS</a></li>
-        <li class="nav-item"><a [class.activePage]="aboutActive" routerLink="/about">ABOUT</a></li>
-        <li class="nav-item"><a [class.activePage]="contactActive" routerLink="/contact">CONTACT</a></li>
+        <li class="nav-item"><a routerLink="/projects">PROJECTS</a></li>
+        <li class="nav-item"><a routerLink="/about">ABOUT</a></li>
+        <li class="nav-item"><a routerLink="/contact">CONTACT</a></li>
+      </ul>
+      <ul class="social">
+        <li><a href="https://www.linkedin.com/in/yuka-yamamoto-7a422421b" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/yamamoto-yuka?tab=repositories" target="_blank">Github</a></li>
+        <li><a href="https://www.instagram.com/yukayama___" target="_blank">Instagram</a></li>
       </ul>
     </nav>
-    <button [class.active]="ham" (click)="hamburgerBtn()" class="hamburger">
-      <span ></span>
-      <span ></span>
-      <span ></span>
+    <button [class.navshow]="blacknav"  [class.active]="ham" (click)="hamburgerBtn()" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
 </header>

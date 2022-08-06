@@ -1,92 +1,133 @@
 <div class="flexContainer">
-  <app-header [aboutActive]="true"></app-header>
+  <app-header [whitelogo]="true"></app-header>
   <main>
-    <section class="wrap">
-      <h3>
-        I am a <br />
-        Front-end Developer <br />
-        who loves:
-      </h3>
+    <section class="about wrap">
+      <h1>About me</h1>
+
       <div class="about-box wrap">
         <div class="about-item wrap">
+          <h2>
+            I am a <br />
+            Front-end Developer <br />
+            who loves
+          </h2>
           <div class="about-items">
             <ul>
               <li class="about-tittle">
-                to figure things out and solve problems
-              </li>
-              <li class="about-desc">
-                When faced with a problem, I feel that there is a lot to
-                discover and enjoy!
-              </li>
-              <li class="about-tittle">
-                to make people have wonderful experiences
-              </li>
-              <li class="about-desc">
-                Making people happy and wonderful experiences makes me wonderful
-                as well!
+                To figure things out and solve problems
+                <ul>
+                  <li>
+                    When faced with a problem, I feel that there is a lot to
+                    discover and enjoy!
+                  </li>
+                </ul>
               </li>
               <li class="about-tittle">
-                to challenge new things with curiosity
+                To make people have wonderful experiences
+                <ul>
+                  <li>
+                    Making people happy and wonderful experiences makes me
+                    wonderful as well!
+                  </li>
+                </ul>
               </li>
-              <li class="about-desc">
-                I would like to grow fast and always keep absorbing many things!
+              <li class="about-tittle">
+                To challenge new things with curiosity
+                <ul>
+                  <li>
+                    I would like to grow fast and always keep absorbing many
+                    things!
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>
-          <div class="resumeLink"
-          inViewport
-          [inViewportOptions]="{ threshold: [1] }"
-          (inViewportAction)="scrollAnimation($event)">
-            <a href="../../assets/resume/YukaYamamoto.pdf" target="_blank">
-              <p>VIEW RESUME</p>
-            </a>
-          </div>
         </div>
-        <div class="video-wrap wrap">
-            <video src="../../assets/video/videoportfolio.mp4" type="video/mp4" playsinline loop autoplay muted>
-          </video>
-        </div>
-      </div>
-    </section>
 
-    <section class="wrap">
-      <h3>Skills</h3>
-      <div class="skill-frontEnd wrap">
-        <p class="skill-title">Front-end</p>
-
-        <!-- Front-end Skills For Loop -->
-        <div class="skill" *ngFor="let skill of skills">
-          <div class="skill-info">
-            <div class="icon-wrap">
-              <img [src]="skill.attributes.SkillIcon.data.attributes.url" [alt]="skill.attributes.SkillIcon.data.attributes.alternativeText" />
+        <div class="about-personal">
+          <h2>Personal Interests</h2>
+          <div class="personal-item wrap">
+            <ul class="personal-desc">
+              <li class="personal-title">
+                Music
+                <ul>
+                  <li>
+                    I love collecting records and music products. Also my
+                    favourite pastime is looking at album cover designs!
+                  </li>
+                </ul>
+              </li>
+              <li class="personal-title">
+                Movie
+                <ul>
+                  <li>
+                    I grew up watching Star Wars. I recently got into making
+                    space videos with After Effects!
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <div class="video-wrap wrap">
+              <video
+                src="../../assets/video/videoportfolio_4.mp4"
+                type="video/mp4"
+                playsinline
+                loop
+                autoplay
+                muted
+              ></video>
             </div>
-            <p class="skill-name">{{ skill.attributes.SkillName }}</p>
-          </div>
-
-          <div class="skill-bar-container">
-            <div
-              class="skill-bar"
-              inViewport
-              [inViewportOptions]="{ threshold: [0] }"
-              (inViewportAction)="onIntersection($event, skill.attributes.SkillLevel)"
-            ></div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="skill-backEnd wrap">
-        <p class="skill-title">Back-end</p>
-        <p class="skill-name">Node.js | MySQL | Strapi (Headless CMS) | PHP</p>
+    <section class="skills wrap">
+      <h1>Skills</h1>
+      <div class="skill skill-frontEnd wrap">
+        <h2>Front-end</h2>
+        <ul class="wrap">
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>Sass</li>
+          <li>Bootstrap</li>
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>Angular</li>
+          <li>GSAP</li>
+          <li>Three.js</li>
+        </ul>
       </div>
-      <div class="skill-design wrap">
-        <p class="skill-title">Design</p>
-        <p class="skill-name">Figma | Photoshop | Illustrator | After Effect</p>
+
+      <div class="skill skill-backEnd wrap">
+        <h2>Back-end</h2>
+        <ul class="wrap">
+          <li>Node.js</li>
+          <li>MySQL</li>
+          <li>Strapi (Headless CMS)</li>
+          <li>PHP</li>
+        </ul>
       </div>
-      <div class="skill-else wrap">
-        <p class="skill-title">What else I can do</p>
-        <p class="skill-name">Wordpress | Github | Sass | Bootstrap</p>
+      <div class="skill skill-else wrap">
+        <h2>What else I can do</h2>
+        <ul class="wrap">
+          <li>Figma</li>
+          <li>Photoshop</li>
+          <li>Illustrator</li>
+          <li>After Effect</li>
+          <li>Wordpress</li>
+          <li>Git</li>
+        </ul>
       </div>
     </section>
+
+    <div
+      class="resumeLink wrap"
+    >
+      <a href="../../assets/resume/YukaYamamoto.pdf" target="_blank">
+        <p>VIEW RESUME</p>
+      </a>
+    </div>
   </main>
   <app-footer></app-footer>
 </div>

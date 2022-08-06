@@ -6,10 +6,10 @@ import { Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  @Input() projectsActive: boolean = false;
-  @Input() aboutActive: boolean = false;
-  @Input() contactActive: boolean = false;
-  @Input() textWhite: boolean = false;
+  @Input() whitelogo: boolean = false;
+  @Input() blacklogo: boolean = false;
+  @Input() blacknav: boolean = false;
+
 
   ham:boolean = false;
   nav:boolean = false;
