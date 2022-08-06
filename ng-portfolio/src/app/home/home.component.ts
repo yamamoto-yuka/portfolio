@@ -51,13 +51,6 @@ export class HomeComponent implements OnInit {
         { display:'none', opacity:0, ease:Power2.easeInOut},
         '-=0.8'
       )
-      // .fromTo(
-      //   this.logo.nativeElement,
-      //   3,
-      //   { opacity: 0 },
-      //   { opacity: 1, ease: Power2.easeInOut },
-      //   '-=3'
-      // )
       .fromTo(
         this.headline.nativeElement,
         3,
