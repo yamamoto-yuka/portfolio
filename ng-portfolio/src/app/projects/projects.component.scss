@@ -46,10 +46,8 @@ main {
 }
 
 .nav {
-  position: absolute;
-  top: 70%;
-  left: 5%;
-  transform: translate(-5%, -70%);
+  width: 100%;
+  margin-top: 2rem;
   font-size: 0.8rem;
   font-family: "lato";
   color: white;
@@ -57,10 +55,10 @@ main {
 
 .line {
   position: absolute;
-  top: 75%;
+  top: 70%;
   left: 8%;
   width: 1.5px;
-  animation: topTobottom 1s normal forwards ease-in-out;
+  animation: topTobottom 3s normal forwards ease-in-out;
   background-color: white;
 }
 
@@ -81,11 +79,15 @@ main {
   position: relative;
 }
 
-img {
+.img-wrap {
   height: 70vh;
   width: 80%;
-  object-fit: cover;
-  filter: brightness(40%);
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    filter: brightness(30%);
+  }
 }
 
 article {
@@ -100,9 +102,15 @@ article {
   width: 100%;
 }
 
+.title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  font-family: "lato";
+}
+
 h3 {
   margin: 0;
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-family: "Anton";
   letter-spacing: 7px;
   color: white;
@@ -141,7 +149,7 @@ h3 {
   color: white;
   border: 1px solid white;
   background-color: transparent;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-family: "lato";
   font-weight: 800;
   text-transform: uppercase;
@@ -152,7 +160,7 @@ h3 {
   color: $black;
   background-color: white;
 }
-.detail-btn{
+.detail-btn {
   margin-right: 1rem;
 }
 
@@ -162,61 +170,66 @@ small {
   left: 50%;
   transform: translate(-50%, -95%);
   margin: 1rem 0;
-  font-size: .6rem;
+  font-size: 0.6rem;
   color: $offWhite;
 }
 
 @media screen and (max-width: 1023px) {
-  .indicators,
-  .nav,
-  .line{
-    display: none;
+  h3 {
+    font-size: 2.5rem;
   }
 
-  .wrapper{
-    height: 100%;
+  article {
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
   }
 
+  .skill {
+    font-size: 0.5rem;
+  }
 }
 
 @media screen and (max-width: 767px) {
-  .projectsSection {
-    margin-top: 15vh;
-  }
-  
-
-  .point{
-    height: 80vh;
-    flex-direction: column-reverse;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 1rem;
+  .indicators {
+    display: none !important;
   }
 
-  article{
-    height: 50%;
-    padding-top:3rem;
-    position: initial;
-    top: initial;
-    left: initial;
-    transform: initial;
-  }
-  img{
-    height: 50%;
-    width: 100%;
+  .line {
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: topTobottom 3s normal infinite ease-in-out;
   }
 
-  h3{
-    font-size: 2rem;
+  .point {
+    padding: 4rem 1rem;
   }
 
-  .skill{
-    font-size: .5rem;
+  h3 {
+    font-size: 2.5rem;
   }
 
-  .detail-btn {
-    font-size: .5rem;
+  .skill {
+    ul {
+      li {
+        padding: 0 0.5rem;
+      }
+    }
   }
+
+  .detail-btn,
+  .github-btn {
+    padding: 10px 3px;
+    font-size: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 319px){
+  h3 {
+    font-size: 1.8rem;
+  }
+
 
 }
 

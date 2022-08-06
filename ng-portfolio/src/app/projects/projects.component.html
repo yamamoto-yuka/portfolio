@@ -1,21 +1,23 @@
 <div class="projectsContainer">
   <app-header [projectsActive]="true"></app-header>
 
-  <section #projectsSection class="projectsSection">
-    <div #wrapper class="wrapper">
+  <section class="projectsSection">
+    <div class="wrapper">
       <div class="indicators">
         <div class="indicator"></div>
         <div class="indicator"></div>
         <div class="indicator"></div>
+        <div class="nav">
+          <p>scroll to explore</p>
+        </div>
       </div>
 
-      <div class="nav">
-        <p>scroll to explore</p>
-      </div>
       <div class="line"></div>
+ 
 
-      <div #point class="point">
+      <div class="point">
         <article class="desc-wrap">
+          <p class="title">E-Commerce site</p>
           <h3>Trunk Records</h3>
           <div class="skill">
             <p>Skills</p>
@@ -27,19 +29,61 @@
               <li>Figma</li>
             </ul>
           </div>
-          <button class="detail-btn">VIEW SITE</button>
-          <button class="github-btn">VIEW GITHUB</button>
+          <a href="https://yukayamamoto.me/trunkrecords" class="detail-btn"
+            >VIEW SITE
+          </a>
+          <a
+            href="https://github.com/yamamoto-yuka/ng-strapi-ecommercesite/tree/master/ng-TrunkRecords-eCommerceSite-Client/src/app"
+            target="_blank"
+            class="github-btn"
+            >VIEW GITHUB
+          </a>
         </article>
+        <div class="img-wrap">
         <img
-          src="https://res.cloudinary.com/yuka-web/image/upload/v1659563542/trunkrecords_thumbnail_e72c206c01.png"
+          src="https://res.cloudinary.com/yuka-web/image/upload/v1659687641/trunkrecords_lhpxj9.gif"
           alt="Trunk Records"
-          width="500"
-          height="500"
         />
       </div>
-      <div #point class="point">
+      </div>
+      <div  class="point">
         <article class="desc-wrap">
-          <h3>Conference Poster Website</h3>
+          <p class="title">E-Commerce site</p>
+          <h3>JFlower</h3>
+          <div class="skill">
+            <p>Skills</p>
+            <ul>
+              <li>PHP</li>
+              <li>MySQL</li>
+              <li>Sass</li>
+              <li>Photoshop</li>
+            </ul>
+          </div>
+          <a
+            href="https://jflower.yukayamamoto.me"
+            target="_blank"
+            class="detail-btn"
+            >VIEW SITE
+          </a>
+          <a
+            href="https://github.com/yamamoto-yuka/php-florists-eCommerceSite"
+            target="_blank"
+            class="github-btn"
+            >VIEW GITHUB
+          </a>
+        </article>
+        <div class="img-wrap">
+        <img
+          src="https://res.cloudinary.com/yuka-web/image/upload/v1659686825/jflower_5bd144bd9e.gif"
+          alt="Conference Poster Website"
+        />
+        </div>
+      </div>
+
+      <div class="point">
+        <article class="desc-wrap">
+          <p class="title">Landing Page</p>
+          <h3>Design Conference Website</h3>
           <div class="skill">
             <p>Skills</p>
             <ul>
@@ -48,36 +92,25 @@
               <li>Illustrator</li>
             </ul>
           </div>
-          <button class="detail-btn">VIEW SITE</button>
-          <button class="github-btn">VIEW GITHUB</button>
+          <a
+            href="https://yukayamamoto.me/conferenceposter"
+            target="_blank"
+            class="detail-btn"
+            >VIEW SITE
+          </a>
+          <a
+            href="https://github.com/yamamoto-yuka/ng-strapi-ecommercesite/tree/master/ng-TrunkRecords-eCommerceSite-Client/src/app"
+            target="_blank"
+            class="github-btn"
+            >VIEW GITHUB
+          </a>
         </article>
+        <div class="img-wrap">
         <img
-          src="https://res.cloudinary.com/yuka-web/image/upload/v1659563542/conferencepostersite_54abf0bab6.png"
+          src="https://res.cloudinary.com/yuka-web/image/upload/v1659686820/conferenceposter_b6907cea78.gif"
           alt="Conference Poster Website"
-          width="500"
-          height="500"
         />
       </div>
-      <div #point class="point">
-        <article class="desc-wrap">
-          <h3>JFlower</h3>
-          <div class="skill">
-            <p>Skills</p>
-            <ul>
-              <li>PHP</li>
-              <li>Sass</li>
-              <li>Photoshop</li>
-            </ul>
-          </div>
-          <button class="detail-btn">VIEW SITE</button>
-          <button class="github-btn">VIEW GITHUB</button>
-        </article>
-        <img
-          src="https://res.cloudinary.com/yuka-web/image/upload/v1659518650/large_jflower1_87442f8650.png"
-          alt="Conference Poster Website"
-          width="500"
-          height="500"
-        />
       </div>
       <small>&copy;Yuka Yamamoto. 2022.</small>
     </div>

@@ -37,13 +37,7 @@ export class HomeComponent implements OnInit {
       { opacity:0 },
       { opacity:1, ease: Power2.easeInOut }
     )
-      // .fromTo(
-      //   this.container.nativeElement,
-      //   1.7,
-      //   { width: '0%' },
-      //   { width: '100%', ease: Power2.easeInOut }
-      // )
-      .fromTo(
+    .fromTo(
         this.topText.nativeElement,
         2.5,
         { opacity: 1},
@@ -51,18 +45,25 @@ export class HomeComponent implements OnInit {
         '-=2'
       )
       .fromTo(
-        this.logo.nativeElement,
-        1,
-        { opacity: 0 },
-        { opacity: 1, ease: Power2.easeInOut },
-        '-=1'
+        this.slider.nativeElement,
+        0.8,
+        { display:'block', opacity:1},
+        { display:'none', opacity:0, ease:Power2.easeInOut},
+        '-=0.8'
       )
+      // .fromTo(
+      //   this.logo.nativeElement,
+      //   3,
+      //   { opacity: 0 },
+      //   { opacity: 1, ease: Power2.easeInOut },
+      //   '-=3'
+      // )
       .fromTo(
         this.headline.nativeElement,
-        1,
+        3,
         { opacity: 0 },
         { opacity: 1, ease: Power2.easeInOut },
-        '-=1'
+        '-=3'
       )
   }
 

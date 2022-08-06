@@ -18,71 +18,13 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent implements OnInit {
-  @ViewChild('projectsSection', { static: true })
-  projectsSection: ElementRef<HTMLDivElement>;
-  @ViewChild('wrapper', { static: true }) wrapper: ElementRef<HTMLDivElement>;
-
-  projects: any[] = [
-    // {
-    //   id:6,
-    //   attributes: {
-    //     ClientName: 'trunk records',
-    //     Slug: '/development/trunkrecords',
-    //     image:'https://res.cloudinary.com/yuka-web/image/upload/v1659563542/trunkrecords_thumbnail_e72c206c01.png',
-    //     skills: {
-    //       data: [
-    //         {
-    //           attributes: {
-    //             SkillName: 'Angular',
-    //           },
-    //         },
-    //         {
-    //           attributes: {
-    //             SkillName: 'Strapi',
-    //           },
-    //         },
-    //         {
-    //           attributes: {
-    //             SkillName: 'Illustrator',
-    //           },
-    //         },
-    //         {
-    //           attributes: {
-    //             SkillName: 'Photoshop',
-    //           },
-    //         },
-    //         {
-    //           attributes: {
-    //             SkillName: 'Figma',
-    //           },
-    //         },
-    //       ],
-    //     },
-    //   },
-    // },
-   
-  ];
+  projects: any[] = [];
 
   constructor(private cs: CommonService, private router: Router) {}
 
-  ngOnInit(): void {
-    // Scroll to Top
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        window.scrollTo(0, 0);
-      }
-    });
-    // this.cs.getProjects().subscribe((res) => {
-    //   this.projects = res.data;
-    //   console.log(this.projects);
-    // });
-
-    gsap.registerPlugin(ScrollTrigger);
-    this.scrollTgr();
-  }
+  // GSAP Animation
   scrollTgr() {
-    if (window.matchMedia('(max-width: 1023px)').matches) {
-    } else {
+
       gsap.registerPlugin(ScrollTrigger);
       ScrollTrigger.defaults({
         markers: false,
@@ -139,6 +81,21 @@ export class ProjectsComponent implements OnInit {
           tl.to(elem.querySelector('article'), { autoAlpha: 0 }, i + 0.75);
         }
       });
-    }
+  }
+
+  ngOnInit(): void {
+    // Scroll to Top
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        window.scrollTo(0, 0);
+      }
+    });
+    // this.cs.getProjects().subscribe((res) => {
+    //   this.projects = res.data;
+    //   console.log(this.projects);
+    // });
+    gsap.registerPlugin(ScrollTrigger);
+    this.scrollTgr();
+    
   }
 }

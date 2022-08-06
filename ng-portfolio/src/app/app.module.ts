@@ -28,7 +28,6 @@ import { TrAccountComponent } from './trunkrecords/mypage/tr-account/tr-account.
 import { CommonStyleComponent } from './trunkrecords/common-style/common-style.component';
 import { CasestudyComponent } from './project-details/casestudy/casestudy.component';
 import { TrPasswordComponent } from './trunkrecords/mypage/password/tr-password.component';
-import { HomeHeaderComponent } from './home-header/home-header.component';
 
 
 
@@ -58,8 +57,7 @@ import { HomeHeaderComponent } from './home-header/home-header.component';
     TrAccountComponent,
     CommonStyleComponent,
     CasestudyComponent,
-    TrPasswordComponent,
-    HomeHeaderComponent,
+    TrPasswordComponent
   ],
   imports: [
     BrowserModule,

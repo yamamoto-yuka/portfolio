@@ -6,6 +6,7 @@
   height: 100%;
   width: 100%;
   background-color: $black;
+  z-index: 6;
 }
 
 .top-logo {
@@ -17,7 +18,7 @@
   letter-spacing: 2px;
   font-weight: 400;
   font-family: "Anton", sans-serif;
-  z-index: 1;
+  z-index: 7;
   img {
     height: 100%;
     width: 130px;
@@ -148,8 +149,8 @@ nav {
 .headline {
   width: 100%;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 90%;
+  transform: translateY(-90%);
   padding: 1rem;
   .title {
     padding-bottom: 1rem;
