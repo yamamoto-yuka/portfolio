@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { HomePage, Project, Projects } from '../interfaces/interface';
+import { HomePage, Project, Projects, About } from '../interfaces/interface';
 import { Skills } from '../interfaces/interface';
 
 @Injectable({
@@ -12,7 +12,11 @@ private url = environment.server;
   constructor(private http:HttpClient) { }
 
   getHomedata(){
-    return this.http.get<HomePage>(this.url + '/api/homepage?populate=*');
+    return this.http.get<HomePage>(this.url + '/api/home-page');
+  }
+
+  getAboutdata(){
+    return this.http.get<About>(this.url + '/api/about-portfolio?populate=*' );
   }
 
   postMessage(data:any){

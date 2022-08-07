@@ -80,7 +80,7 @@ nav {
           font-size: 3rem;
           letter-spacing: 5px;
           font-family: "Anton", sans-serif;
-          transition: all .3s ease-in-out;
+          transition: all 0.3s ease-in-out;
         }
         a:hover,
         a:active {
@@ -163,9 +163,11 @@ nav {
   }
   .description {
     width: 100%;
-    p {
-      font-size: 1rem;
-      font-weight: 400;
+    font-size: 1rem;
+    font-weight: 400;
+    color: $offWhite;
+    p{
+      margin: 0;
     }
   }
 }
@@ -195,9 +197,7 @@ nav {
       }
     }
     .description {
-      p {
-        font-size: 0.8rem;
-      }
+      font-size: 0.8rem;
     }
   }
 }

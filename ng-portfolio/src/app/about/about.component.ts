@@ -1,6 +1,7 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import {  NavigationEnd, Router } from '@angular/router';
 import { CommonService } from '../services/common.service';
+import { About } from '../interfaces/interface';
 
 @Component({
   selector: 'app-about',
@@ -8,26 +9,10 @@ import { CommonService } from '../services/common.service';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent implements OnInit {
-  proficiency = '';
-  skills: any[] = [];
+  aboutItem:About;
 
-  progress: any;
+  constructor(private cs: CommonService, private router:Router) {}
 
-  constructor(private renderer: Renderer2, private cs: CommonService, private router:Router) {}
-
-  scrollAnimation(event: any) {
-    if (event.visible) {
-      this.renderer.setStyle(event.target, 'transform', 'translateX(-50%)');
-    }
-  }
-
-  onIntersection(event: any, percent: any) {
-    console.log(event);
-    if (event.visible) {
-      console.log(percent);
-      this.renderer.setStyle(event.target, 'width', percent + '%');
-    }
-  }
 
   ngOnInit(): void {
     // Scroll to Top 
@@ -36,9 +21,9 @@ export class AboutComponent implements OnInit {
         window.scrollTo(0, 0);
       }
     })
-      this.cs.getSkills().subscribe(res => {
-        this.skills = res.data;
-        console.log(this.skills);
-      });
+    this.cs.getAboutdata().subscribe(res =>{
+      console.log(res);
+      this.aboutItem = res;
+    })
   }
 }

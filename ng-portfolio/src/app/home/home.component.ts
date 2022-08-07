@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import * as THREE from 'three';
 import { FlyControls } from 'three/examples/jsm/controls/FlyControls';
 import { gsap, Power2 } from 'gsap';
+import { CommonService } from '../services/common.service';
+import { HomePage } from '../interfaces/interface';
 
 @Component({
   selector: 'app-top',
@@ -21,8 +23,9 @@ export class HomeComponent implements OnInit {
   @ViewChild('topText', { static: true }) topText: ElementRef<HTMLDivElement>;
   @ViewChild('slider', { static: true }) slider: ElementRef<HTMLDivElement>;
   activeClass:boolean = false;
+  homeitem:HomePage;
 
-  constructor() {}
+  constructor(private cs:CommonService) {}
 
   showNav(){
     this.activeClass = !this.activeClass;
@@ -171,5 +174,12 @@ export class HomeComponent implements OnInit {
 
     //EXECUTE OPENING ANIMATION
     this.timelineAnimation();
+
+    // Data
+    this.cs.getHomedata().subscribe(res =>{
+      console.log(res);
+      this.homeitem = res;
+    })
+
   }
 }

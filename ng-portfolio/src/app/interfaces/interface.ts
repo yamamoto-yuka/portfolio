@@ -2,8 +2,8 @@ export interface HomePage {
   data: {
     id: number;
     attributes: {
-      name: string;
-      jbt: string;
+      Name: string;
+      Jbt: string;
       Description: string;
       bannerimage: {
         data: {
@@ -22,6 +22,71 @@ export interface HomePage {
   };
 }
 
+export interface About {
+  data: {
+    id: number;
+    attributes: {
+      Resume: {
+        data: {
+          attributes: {
+            url: string;
+          };
+        };
+      };
+      Video: {
+        data: {};
+      };
+      about_descriptions: {
+        data: [
+          {
+            attributes: {
+              Title: string;
+              Description: string;
+            };
+          }
+        ];
+      };
+      about_personals: {
+        data: [
+          {
+            attributes: {
+              Title: string;
+              Description: string;
+            };
+          }
+        ];
+      };
+      front_end_skills: {
+        data: [
+          {
+            attributes: {
+              SkillName: string;
+            };
+          }
+        ];
+      };
+      back_end_skills: {
+        data: [
+          {
+            attributes: {
+              SkillName: string;
+            };
+          }
+        ];
+      };
+      other_skills: {
+        data: [
+          {
+            attributes: {
+              SkillName: string;
+            };
+          }
+        ];
+      };
+    };
+  };
+}
+
 export interface Project {
   id: number;
   attributes: {
@@ -34,7 +99,7 @@ export interface Project {
     StartDate: string;
     EndDate: string;
     Display: boolean;
-    GithubURL:string;
+    GithubURL: string;
     skills: {
       data: [
         {

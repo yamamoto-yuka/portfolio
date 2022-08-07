@@ -13,30 +13,11 @@
           </h2>
           <div class="about-items">
             <ul>
-              <li class="about-tittle">
-                To figure things out and solve problems
+              <li class="about-tittle" *ngFor="let about of aboutItem.data.attributes.about_descriptions.data">
+                {{about.attributes.Title}}
                 <ul>
                   <li>
-                    When faced with a problem, I feel that there is a lot to
-                    discover and enjoy!
-                  </li>
-                </ul>
-              </li>
-              <li class="about-tittle">
-                To make people have wonderful experiences
-                <ul>
-                  <li>
-                    Making people happy and wonderful experiences makes me
-                    wonderful as well!
-                  </li>
-                </ul>
-              </li>
-              <li class="about-tittle">
-                To challenge new things with curiosity
-                <ul>
-                  <li>
-                    I would like to grow fast and always keep absorbing many
-                    things!
+                    {{about.attributes.Description}}
                   </li>
                 </ul>
               </li>
@@ -48,21 +29,12 @@
           <h2>Personal Interests</h2>
           <div class="personal-item wrap">
             <ul class="personal-desc">
-              <li class="personal-title">
-                Music
+              <li class="personal-title" *ngFor="let personal of aboutItem.data.attributes.about_personals.data">
+
+                {{personal.attributes.Title}}
                 <ul>
                   <li>
-                    I love collecting records and music products. Also my
-                    favourite pastime is looking at album cover designs!
-                  </li>
-                </ul>
-              </li>
-              <li class="personal-title">
-                Movie
-                <ul>
-                  <li>
-                    I grew up watching Star Wars. I recently got into making
-                    space videos with After Effects!
+                    {{personal.attributes.Description}}
                   </li>
                 </ul>
               </li>
@@ -87,35 +59,20 @@
       <div class="skill skill-frontEnd wrap">
         <h2>Front-end</h2>
         <ul class="wrap">
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>Sass</li>
-          <li>Bootstrap</li>
-          <li>JavaScript</li>
-          <li>TypeScript</li>
-          <li>Angular</li>
-          <li>GSAP</li>
+          <li *ngFor="let front of aboutItem.data.attributes.front_end_skills.data">{{front.attributes.SkillName}}</li>
         </ul>
       </div>
 
       <div class="skill skill-backEnd wrap">
         <h2>Back-end</h2>
         <ul class="wrap">
-          <li>Node.js</li>
-          <li>MySQL</li>
-          <li>Strapi (Headless CMS)</li>
-          <li>PHP</li>
+          <li *ngFor="let back of aboutItem.data.attributes.back_end_skills.data">{{back.attributes.SkillName}}</li>
         </ul>
       </div>
       <div class="skill skill-else wrap">
         <h2>What else I can do</h2>
         <ul class="wrap">
-          <li>Figma</li>
-          <li>Photoshop</li>
-          <li>Illustrator</li>
-          <li>After Effect</li>
-          <li>Wordpress</li>
-          <li>Git</li>
+          <li *ngFor="let others of aboutItem.data.attributes.other_skills.data">{{others.attributes.SkillName}}</li>
         </ul>
       </div>
     </section>
