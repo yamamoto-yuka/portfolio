@@ -14,7 +14,6 @@ import { TrSignupComponent } from './trunkrecords/mypage/tr-signup/tr-signup.com
 import { TrLoginComponent } from './trunkrecords/mypage/tr-login/tr-login.component';
 import { TrAccountComponent} from './trunkrecords/mypage/tr-account/tr-account.component';
 import { LoginGuard } from './trunkrecords/auth/login.guard';
-import { CasestudyComponent } from './project-details/casestudy/casestudy.component';
 import { TrPasswordComponent } from './trunkrecords/mypage/password/tr-password.component';
 
 const routes: Routes = [
@@ -23,7 +22,6 @@ const routes: Routes = [
   {path:'projects', component:ProjectsComponent},
   {path:'about', component:AboutComponent},
   {path:'projects/development/:title/:id', component:DevelopmentComponent},
-  {path:'projects/casestudy/:title/:id', component:CasestudyComponent},
   {path:'projects/other/:title/:id', component:OtherComponent},
   {path:'contact', component:ContactComponent},
   // For conference poster site

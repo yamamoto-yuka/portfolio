@@ -26,7 +26,6 @@ import { TrLoginComponent } from './trunkrecords/mypage/tr-login/tr-login.compon
 import { TrSignupComponent } from './trunkrecords/mypage/tr-signup/tr-signup.component';
 import { TrAccountComponent } from './trunkrecords/mypage/tr-account/tr-account.component';
 import { CommonStyleComponent } from './trunkrecords/common-style/common-style.component';
-import { CasestudyComponent } from './project-details/casestudy/casestudy.component';
 import { TrPasswordComponent } from './trunkrecords/mypage/password/tr-password.component';
 
 
@@ -56,7 +55,6 @@ import { TrPasswordComponent } from './trunkrecords/mypage/password/tr-password.
     TrSignupComponent,
     TrAccountComponent,
     CommonStyleComponent,
-    CasestudyComponent,
     TrPasswordComponent
   ],
   imports: [
