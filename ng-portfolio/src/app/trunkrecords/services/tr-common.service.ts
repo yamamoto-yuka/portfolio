@@ -1,14 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Product, Products, User } from '../interfaces/tr-interface';
+import { Product, Products, User,Userdata } from '../interfaces/tr-interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TrCommonService {
   private server = environment.server;
-
   constructor(private http: HttpClient) {}
 
   getAllproduct() {
@@ -34,6 +33,16 @@ export class TrCommonService {
     return this.http.post(this.server + '/api/auth/local/register', data);
   }
 
+  getuserByID(id:any){
+    return this.http.get<Userdata>(
+      this.server + '/api/users/' + id,{
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer ' + localStorage.getItem('jwt'),
+        },
+      }
+    );
+  }
 
   updateUser(id: any, data: any) {
     return this.http.put<User>(

@@ -33,3 +33,8 @@ export interface User{
     email: string;
   };
 }
+export interface Userdata{
+    id:any;
+    username: string;
+    email: string;
+}

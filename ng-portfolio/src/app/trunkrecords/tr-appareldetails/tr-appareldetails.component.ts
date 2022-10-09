@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TrCommonService } from '../services/tr-common.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-tr-appareldetails',
@@ -9,7 +10,7 @@ import { TrCommonService } from '../services/tr-common.service';
 })
 export class TrAppareldetailsComponent implements OnInit {
   product: any;
-
+  server = environment.server;
   constructor(private cs:TrCommonService, private param:ActivatedRoute) { }
 
   availability(data: any) {

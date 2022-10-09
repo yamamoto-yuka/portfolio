@@ -36,8 +36,11 @@ export class TrAccountComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // console.log(localStorage.getItem('username'));
-    this.username = localStorage.getItem('username');
-    this.email = localStorage.getItem('email');
+    let id =  localStorage.getItem('id');
+    this.cs.getuserByID(id).subscribe(data =>{
+      console.log(data);
+      this.username = data.username;
+      this.email = data.email;
+    })
   }
 }

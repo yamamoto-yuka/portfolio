@@ -1,0 +1,34 @@
+### Authroization
+### Register (Also, you can create a new default user by usign Strapi admin screen)
+POST http://localhost:1337/api/auth/local/register
+Content-Type: application/json
+
+{
+    "username":"New",
+    "email": "new@new.com",
+    "password":"123456"
+}
+
+### Authenticate an user (You can authenticate a user by sending a POST request)
+POST http://localhost:1337/api/auth/local
+Content-Type: application/json
+
+{
+  "identifier": "yamamoto_yuka@hotmail.com",
+  "password": "123456"
+}
+
+### Authenticate an user (You can authenticate a user by sending a POST request)
+GET http://localhost:1337/api/users/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjY1MzQ2NzM4LCJleHAiOjE2Njc5Mzg3Mzh9.M2J1J7fui8vP2-ZSlXkivyreIemevz4nPfRYisbjah0
+
+
+### Authenticate an user (You can authenticate a user by sending a POST request)
+POST https://cms.yukayamamoto.me/api/auth/local
+Content-Type: application/json
+
+{
+  "identifier": "yamamoto_yuka@hotmail.com",
+  "password": "123456"
+}
