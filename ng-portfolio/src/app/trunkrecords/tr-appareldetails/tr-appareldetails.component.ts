@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class TrAppareldetailsComponent implements OnInit {
   product: any;
-  server = environment.server;
+  // server = environment.server;
   constructor(private cs:TrCommonService, private param:ActivatedRoute) { }
 
   availability(data: any) {

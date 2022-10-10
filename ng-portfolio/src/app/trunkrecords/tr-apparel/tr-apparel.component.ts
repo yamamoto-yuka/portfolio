@@ -10,7 +10,7 @@ import { TrCommonService } from '../services/tr-common.service';
 })
 export class TrApparelComponent implements OnInit {
     products: any[] = [];
-    server = environment.server;
+    // server = environment.server;
   constructor(private cs:TrCommonService) {}
 
   availability(data: any) {
