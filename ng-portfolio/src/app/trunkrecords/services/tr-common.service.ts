@@ -8,8 +8,30 @@ import { Product, Products, User,Userdata } from '../interfaces/tr-interface';
 })
 export class TrCommonService {
   private server = environment.server;
-  constructor(private http: HttpClient) {}
+  // private jsonData ={
+  //   id:1;
+  //   attributes: {
+  //     product_name: string;
+  //     product_desc: string;
+  //     product_price: number;
+  //     product_quantity: number;
+  //     product_display: boolean;
+  //     product_image:{
+  //         data:[
+  //           {
+  //             id:number;
+  //             attributes:{
+  //               alternativeText:string;
+  //               url:string;
+  //             }
+  //           }
+  //         ]
+  //     }
+  //   }
+    
+  // }
 
+  constructor(private http: HttpClient) {}
   getAllproduct() {
     return this.http.get<Products>(
       this.server + '/api/apparelpages?populate=deep'
