@@ -1,6 +1,6 @@
 # portfolio
 🪐 
-Here is my [portfolio](https://yukayamamoto.me/).
+Here is my [portfolio](https://yukayamamoto.com/).
 
 # Skillset
 - [Angular](https://angular.io/)
